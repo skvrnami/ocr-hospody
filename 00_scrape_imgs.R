@@ -1,9 +1,9 @@
 library(rvest)
 
-dir.create(glue::glue("output/301"))
+book_id <- 301
+dir.create(glue::glue("output/{book_id}"))
 for(i in 1:492){
     cat(i)
-    book_id <- 301
     page_no <- i
     url <- glue::glue("https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid={book_id}&page={page_no}")
     html <- read_html(url)
@@ -15,10 +15,10 @@ for(i in 1:492){
     Sys.sleep(1)
 }
 
-dir.create(glue::glue("output/171"))
+book_id <- 171
+dir.create(glue::glue("output/{book_id}"))
 for(i in 1:507){
     cat(i)
-    book_id <- 171
     page_no <- i
     url <- glue::glue("https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid={book_id}&page={page_no}")
     html <- read_html(url)
