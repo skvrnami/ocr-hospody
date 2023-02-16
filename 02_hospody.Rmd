@@ -1,0 +1,35 @@
+---
+title: "02_hospody"
+author: "Michael Škvrňák"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(quanteda)
+library(readtext)
+```
+
+```{r}
+# TODO: pročistit
+desky1_files <- list.files("texts/171/", "*.txt", full.names = TRUE)
+desky1 <- readtext(desky1_files, docvarsfrom = "filenames")
+desky1_corpus <- corpus(desky1)
+desky1_tokens <- tokens(desky1_corpus)
+
+kwic(desky1_tokens, "taber*")
+
+```
+
+
+```{r}
+desky2_files <- list.files("texts/301/", "*.txt", full.names = TRUE)
+desky2 <- readtext(desky2_files, docvarsfrom = "filenames")
+desky2_corpus <- corpus(desky2)
+desky2_tokens <- tokens(desky2_corpus)
+
+kwic(desky2_tokens, "taber*")
+```
