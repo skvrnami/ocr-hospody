@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Škvrňák" />
 
-<meta name="date" content="2023-02-16" />
+<meta name="date" content="2023-07-09" />
 
 <title>02_hospody</title>
 
@@ -352,452 +352,809 @@ display: none;
 
 <h1 class="title toc-ignore">02_hospody</h1>
 <h4 class="author">Michael Škvrňák</h4>
-<h4 class="date">2023-02-16</h4>
+<h4 class="date">2023-07-09</h4>
 
 </div>
 
 
-<pre class="r"><code># TODO: pročistit
-desky1_files &lt;- list.files(&quot;texts/171/&quot;, &quot;*.txt&quot;, full.names = TRUE)
+<div id="die-landtafel-des-markgrafthumes-mähren.-brünner-cuda" class="section level2">
+<h2>Die Landtafel des Markgrafthumes Mähren. Brünner Cuda</h2>
+<pre class="r"><code>desky1_files &lt;- list.files(&quot;texts/171/&quot;, &quot;*.txt&quot;, full.names = TRUE)
 desky1 &lt;- readtext(desky1_files, docvarsfrom = &quot;filenames&quot;)
 desky1_corpus &lt;- corpus(desky1)
 desky1_tokens &lt;- tokens(desky1_corpus)
 
-kwic(desky1_tokens, &quot;taber*&quot;)</code></pre>
-<pre><code>## Keyword-in-context with 41 matches.                                                                     
-##   [11.txt, 246]                laneis cum dimidio et cum | Tabernis |
-##  [110.txt, 499]                    , II curticulis, 1373 | taberna  |
-##   [114.txt, 96]            Wnemogenjch Curiam ara- ture, | Tabernam |
-##  [120.txt, 286]            Policz super tribus laneis et | taberna  |
-##    [13.txt, 83]                in Vgesd ibidem et mediam | Tabernam |
-##  [141.txt, 849]                 Curticulam cum duabus* ) | tabernis |
-##  [143.txt, 205]             pleno Jure etdoninio, mediam | tabernam |
-##  [144.txt, 695]      Erharticz vnam curtici niam minorem | tabernam |
-##  [150.txt, 423]            villa Wrbicz duos laneos vnam | tabernam |
-##  [150.txt, 673]               Nemoyani Cu- riam aralure, | tabernam |
-##  [162.txt, 603]                    dimidio in villa Lom, | tabernam |
-##  [281.txt, 293]       vnacum Municione ibidem Balneis et | tabernis |
-##   [29.txt, 337]            Orllinus de Brvnna VII laneos | tabernam |
-##  [322.txt, 330]              dimidio laneis et in tribus | tabernis |
-##  [327.txt, 527]                 laneis et. curticulis et | taberna  |
-##  [340.txt, 213]                 Lilcze in Sex laneis vna | taberna  |
-##  [340.txt, 223]            hominibus qui dictos la- neos | tabernam |
-##  [348.txt, 815]          et eius heredibus quatuor aneos | tabernam |
-##  [365.txt, 847]       censualibus et non censualibus vna | taberna  |
-##  [368.txt, 487]                      . in sex laneis vna | taberna  |
-##  [368.txt, 499]                , nibus qui dictos laneos | tabernam |
-##  [369.txt, 891]          ibidem habuit in laneis Nosamue | tabernis |
-##  [379.txt, 195]                Blazkow cum Balneo et vna | taberna  |
-##   [40.txt, 756]                 VII laneos I suriouts el | tabernam |
-##  [406.txt, 262]    omnibus pertinencijs ad dictos laneos | tabernas |
-##  [407.txt, 903] locis piseinarum Riuis riuulis Molendino | taberna  |
-##   [416.txt, 42]                  super Sex laneis et vna | Taberna  |
-##  [495.txt, 484]                                , IL. 19; | Taberna  |
-##   [60.txt, 203]                     et IV laneos et duas | tabernas |
-##   [60.txt, 256]                laneis cum quartali et Il | tabernis |
-##   [62.txt, 535]          et heredibus suis ibidem mediam | tabernam |
-##   [62.txt, 843]              sue super aratura ibidem et | taberna  |
-##   [75.txt, 603]        longum prout Lanczünus tenuit cum | Taberna  |
-##   [82.txt, 106]  singulis Juribus et dominijs liberamque |  Taber-  |
-##   [82.txt, 646]                Nouem Curticulas, Baleum, | Tabernam |
-##   [86.txt, 342]                 laneos Cen- suales, vnam | Tabernam |
-##   [86.txt, 614]        dimidium laneum Censualem, mediam | Tabernam |
-##   [91.txt, 290]            quatuor subsidibus, in duabus | tabernis |
-##   [91.txt, 713]                  , vnam Curtieulam, vnam | Tabernam |
-##   [92.txt, 148]             Wrze- snycze quatuor laneos, | Tabernam |
-##   [95.txt, 300]                   araturam, tres laneos, | Tabernam |
-##                                            
-##  et Curticulis, Pratis,                    
-##  . vendidit hereditarie Sei lendas         
-##  vnam, ortum, Siluam                       
-##  et vno prat quadraginta sexagenas         
-##  dcm Curticu medium Molendinum desertum    
-##  et suis pertinencijs pleno Jure           
-##  , duas partes molendini,                  
-##  prope ecclesiam et balneui m              
-##  , et curtieulam vnam,                     
-##  vnam curliculam siluam cum genius         
-##  et siluam vnam dictam Horka               
-##  , metis limitibus vineis et               
-##  et ortum domino Dyellino Maurieij         
-##  et in medio nemore,                       
-##  et Tiscina pralis siluis pascuis          
-##  et tribus curticulis et hominibus         
-##  et subsides possident pleno Jure          
-##  et subsidem in villa Lazani               
-##  censibus redditibus robolis pratis paseuis
-##  et tribus curliculis el homi-             
-##  et. subsides possident pleno              
-##  medio laneo quartali et curticula         
-##  ibidem in Blaczkow eum prato              
-##  cum siluis pratis et alijs                
-##  et curticulas ab antiquo spectantibus     
-##  montibus vallibus et omnibus perl         
-##  et tri- Jus curticulis et                 
-##  ( Thaberna ), I                           
-##  et quinque curliculas vnum.               
-##  et V curtieulis Molendino pratis          
-##  cum aquis et alijs pertinencijs           
-##  et VI piscinis el Molendino               
-##  libera et pleno dominio et                
-##  mam vendidit Jure hereditario possidenda  
-##  liberam eum Pomerio, el                   
-##  , Molendinum, vnam Curli-                 
-##  , Septem laneos, duas                     
-##  , im m marcis grossorum                   
-##  , Rubela ad ean- dem                      
-##  , quinque Curticulas, lerciale            
-##  , wnam Curüculam, quarlam</code></pre>
+kwic(desky1_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 63 matches.                                                                                                                 
+##   [11.txt, 246]                laneis cum dimidio et cum | Tabernis  | et Curticulis, Pratis,                    
+##  [110.txt, 499]                    , II curticulis, 1373 |  taberna  | . vendidit hereditarie Sei lendas         
+##  [111.txt, 620]                    in que pnis laneis et | thaberna  | racione veri dota- m Jus                  
+##   [114.txt, 96]            Wnemogenjch Curiam ara- ture, | Tabernam  | vnam, ortum, Siluam                       
+##  [120.txt, 286]            Policz super tribus laneis et |  taberna  | et vno prat quadraginta sexagenas         
+##    [13.txt, 83]                in Vgesd ibidem et mediam | Tabernam  | dcm Curticu medium Molendinum desertum    
+##  [141.txt, 849]                 Curticulam cum duabus* ) | tabernis  | et suis pertinencijs pleno Jure           
+##  [143.txt, 205]             pleno Jure etdoninio, mediam | tabernam  | , duas partes molendini,                  
+##  [144.txt, 695]      Erharticz vnam curtici niam minorem | tabernam  | prope ecclesiam et balneui m              
+##  [150.txt, 423]            villa Wrbicz duos laneos vnam | tabernam  | , et curtieulam vnam,                     
+##  [150.txt, 673]               Nemoyani Cu- riam aralure, | tabernam  | vnam curliculam siluam cum genius         
+##   [16.txt, 482]              . MORAVIAE. octo Curticulas | thabernam | et molendinum in Kyrn- 1351               
+##   [16.txt, 499]                   laneos, II curticulas, | Thabernam | liberam et molendinum eum omnibus         
+##  [162.txt, 603]                    dimidio in villa Lom, | tabernam  | et siluam vnam dictam Horka               
+##  [200.txt, 892]                   curticulom, in qua est | thaberna  | , et quartam partem thelonei              
+##  [209.txt, 810]                     ipsius&quot; Woislai, cum | thaberna  | eum siluis et alijs vniuersis             
+##  [222.txt, 344]                  cum Molendino ) et Jure | thaberne  | et Jurepatronatus ecclesie ibidem incluso 
+##  [228.txt, 349]       curti- culis censualibus et tribus | thabernis | cum agris pascuis Siluis el               
+##  [233.txt, 322]     heredibus duos laneos censuales vnam | Thabernam | . in Puczow cum eorum                     
+##   [234.txt, 96]            in Lazkow Quinque laneos vnam | Thabernam | cum pratis pascuis Siluis riuis           
+##  [239.txt, 982]    super nono dimidio laneis censualibus | Thaberna  | et Curtieula Centum sexagenas grossorum   
+##  [242.txt, 520]                  1406, uatuor laneis Sex | thabernis | et duabus Curticulis et ho-               
+##  [243.txt, 127]                     , vijs, cum Araturis | Thabernis | Curticulis limitibus et granieijs,        
+##  [250.txt, 250]          lronatus ecclesie ibidem et Jus | Thaberne  | cum suis omnibus ad ipsam                 
+##  [264.txt, 852]                    , duas Curticulas, et | Thabernam | cum siluis et cum silua                   
+##  [265.txt, 193]          Quindecim Curliculis, et duabus | thabernis | , decem marcas census annui               
+##  [265.txt, 258]          quinque laneis XV curticulis et | thabernis | duabus. ) 182.                            
+##  [281.txt, 293]       vnacum Municione ibidem Balneis et | tabernis  | , metis limitibus vineis et               
+##  [281.txt, 415]                  , aquis Riuis Balneo et | Thabernis | , metis, limitibus vineis                 
+##   [282.txt, 34]                  minor, cum quarta parte | Thaberne  | et cum tribus partibus vinearum           
+##   [29.txt, 337]            Orllinus de Brvnna VII laneos | tabernam  | et ortum domino Dyellino Maurieij         
+##  [306.txt, 160]          predictis tribus laneis duabus. | thabernis | et alijs, que in                          
+##  [308.txt, 403]           Quatuor laneos agrorum et vnam | thabernam | et vnam curticulam cum hominibus          
+##  [318.txt, 258]            decem et octo curticulas duas | Thabernas | aquis Riuis fluentibus et non             
+##  [322.txt, 330]              dimidio laneis et in tribus | tabernis  | et in medio nemore,                       
+##  [327.txt, 527]                 laneis et. curticulis et |  taberna  | et Tiscina pralis siluis pascuis          
+##  [340.txt, 213]                 Lilcze in Sex laneis vna |  taberna  | et tribus curticulis et hominibus         
+##  [340.txt, 223]            hominibus qui dictos la- neos | tabernam  | et subsides possident pleno Jure          
+##  [348.txt, 815]          et eius heredibus quatuor aneos | tabernam  | et subsidem in villa Lazani               
+##  [365.txt, 847]       censualibus et non censualibus vna |  taberna  | censibus redditibus robolis pratis paseuis
+##  [368.txt, 487]                      . in sex laneis vna |  taberna  | et tribus curliculis el homi-             
+##  [368.txt, 499]                , nibus qui dictos laneos | tabernam  | et. subsides possident pleno              
+##  [369.txt, 891]          ibidem habuit in laneis Nosamue | tabernis  | medio laneo quartali et curticula         
+##  [379.txt, 195]                Blazkow cum Balneo et vna |  taberna  | ibidem in Blaczkow eum prato              
+##   [40.txt, 756]                 VII laneos I suriouts el | tabernam  | cum siluis pratis et alijs                
+##  [406.txt, 262]    omnibus pertinencijs ad dictos laneos | tabernas  | et curticulas ab antiquo spectantibus     
+##  [407.txt, 903] locis piseinarum Riuis riuulis Molendino |  taberna  | montibus vallibus et omnibus perl         
+##   [416.txt, 42]                  super Sex laneis et vna |  Taberna  | et tri- Jus curticulis et                 
+##  [495.txt, 484]                                , IL. 19; |  Taberna  | ( Thaberna ), I                           
+##  [495.txt, 486]                          . 19; Taberna ( | Thaberna  | ), I. 154                                 
+##   [60.txt, 203]                     et IV laneos et duas | tabernas  | et quinque curliculas vnum.               
+##   [60.txt, 256]                laneis cum quartali et Il | tabernis  | et V curtieulis Molendino pratis          
+##   [62.txt, 535]          et heredibus suis ibidem mediam | tabernam  | cum aquis et alijs pertinencijs           
+##   [62.txt, 843]              sue super aratura ibidem et |  taberna  | et VI piscinis el Molendino               
+##   [75.txt, 603]        longum prout Lanczünus tenuit cum |  Taberna  | libera et pleno dominio et                
+##   [82.txt, 106]  singulis Juribus et dominijs liberamque |  Taber-   | mam vendidit Jure hereditario possidenda  
+##   [82.txt, 646]                Nouem Curticulas, Baleum, | Tabernam  | liberam eum Pomerio, el                   
+##   [86.txt, 342]                 laneos Cen- suales, vnam | Tabernam  | , Molendinum, vnam Curli-                 
+##   [86.txt, 614]        dimidium laneum Censualem, mediam | Tabernam  | , Septem laneos, duas                     
+##   [91.txt, 290]            quatuor subsidibus, in duabus | tabernis  | , im m marcis grossorum                   
+##   [91.txt, 713]                  , vnam Curtieulam, vnam | Tabernam  | , Rubela ad ean- dem                      
+##   [92.txt, 148]             Wrze- snycze quatuor laneos, | Tabernam  | , quinque Curticulas, lerciale            
+##   [95.txt, 300]                   araturam, tres laneos, | Tabernam  | , wnam Curüculam, quarlam</code></pre>
+<pre class="r"><code># kwic(desky1_tokens, &quot;thaber*&quot;)
+kwic(desky1_tokens, &quot;humul*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(desky1_tokens, &quot;slad*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 3 matches.                                                       
+##  [403.txt, 529] . dalei ven Hand: | sLadislaw | *, d. i
+##  [405.txt, 503]    teren. Haud: » | sLadislaw | *, d. i
+##  [424.txt, 499] spü- teren. Hand: | sLadislaw | *, d. i</code></pre>
+</div>
+<div id="die-landtafel-des-markgrafthumes-mähren.-olmützer-cuda" class="section level2">
+<h2>Die Landtafel des Markgrafthumes Mähren. Olmützer Cuda</h2>
 <pre class="r"><code>desky2_files &lt;- list.files(&quot;texts/301/&quot;, &quot;*.txt&quot;, full.names = TRUE)
 desky2 &lt;- readtext(desky2_files, docvarsfrom = &quot;filenames&quot;)
 desky2_corpus &lt;- corpus(desky2)
 desky2_tokens &lt;- tokens(desky2_corpus)
 
-kwic(desky2_tokens, &quot;taber*&quot;)</code></pre>
-<pre><code>## Keyword-in-context with 171 matches.                                                                               
-##   [10.txt, 697]                      lays et heredes suos Curiam |  Tabernam  |
-##  [105.txt, 190]             Curias arature Tres laneos Censuales |  Tabernam  |
-##   [106.txt, 97]                             , Mo lendinum minus, |  Tabernam  |
-##  [106.txt, 507]                           et super vno quartali, |  Taberna   |
-##  [108.txt, 409]                         possi- denda, eciam vnam |  Tabernam  |
-##  [109.txt, 259]                Malcouicz Curiam el septem laneos |  Tabernam  |
-##  [109.txt, 306]                    et duobus laneis super Balneo |  Tabernm   |
-##  [111.txt, 360]                       et VII Cur- liculas mediam |  tabernam  |
-##  [112.txt, 388]                              et vno. quartali et |  Taberna   |
-##  [112.txt, 483]                            Jui clesie, sides IIL |  Tabernas  |
-##  [113.txt, 555]               et pertinencijs Molendinum et vnam |  tabernam  |
-##   [115.txt, 62]               Vazan octauumdimidium laneos, duas |  Tabernas  |
-##  [116.txt, 305]                     Paczlauicz Quin-. que laneos |  Tabernam  |
-##  [117.txt, 112]                     arature ll laneos Censuales, |  Tabernam  |
-##  [118.txt, 102]                           vno laneo censuali, et |  Taberna   |
-##  [118.txt, 592]                           sue in villa sualibus, |  Taberna   |
-##  [118.txt, 677]                          maiores et III minores, |  Tabernas  |
-##  [118.txt, 750]               quartodimidio laneo ibidem, tribus |  Tabernis  |
-##  [118.txt, 783]                        quartalia sss lien in Lo- |  tabernam  |
-##  [119.txt, 255]                 in villa Podole Curiam predialem |  tabernam  |
-##  [120.txt, 841]                     Curiam quinque laneis et vna |  Taberna   |
-##  [121.txt, 131]                         et in Dolan habeant vnam |  tabernam  |
-##  [121.txt, 648]              Opidum Brodek cum vniuersis Incolis |  Tabernis  |
-##  [123.txt, 292]                           . Rande. 119 censualem |  tabernam  |
-##  [125.txt, 504]                        Curia prediali, vigi duas |  tabernas  |
-##  [126.txt, 375]                       laneos et tres Subsides et |  tabernam  |
-##  [131.txt, 676]              Sdenconi Lad Johanni Quinque laneis |  Taberna   |
-##  [132.txt, 402]                 Senicz cum torciodinidio laneis, |  Taberna   |
-##  [132.txt, 672]                        Quinque cum medio laneos, |  Tabernam  |
-##   [135.txt, 76]                      suis heredibus in villa Se- |  Tabernam  |
-##   [141.txt, 12]                            1382. uis curticulis, |  Taberna   |
-##  [142.txt, 414]                         Y laneos soluentes, duas |  tabernas  |
-##  [143.txt, 156]                          Molendinum, et in willa |  Tabernam  |
-##  [143.txt, 211]            didit heredilarie possidendam, tribus |  tabernis  |
-##  [144.txt, 525]                      mer r Molendino medio laneo |  taberna   |
-##  [147.txt, 245]                               ) in Orzechove, VI |  Tabernam  |
-##  [147.txt, 716]                             nicz? ) in Poczenicz |  Tabernam  |
-##  [150.txt, 611]                            , Item in Tuczyn vnam |  tabernam  |
-##  [151.txt, 209]            villa Rosczyn terciumdimidium laneum, |  tabernam  |
-##   [153.txt, 12]                       ) Curiam in villa Cozussan |  Tabernam  |
-##  [154.txt, 164]                           In- colis, Subsidibus, |  tabernis  |
-##  [156.txt, 612]              duabus porcionibus molendini, super |  taberna   |
-##  [158.txt, 192]                 Sdyetyn Zuboni et suis heredibus |  tabernam  |
-##  [158.txt, 698]                  quartalibus cum dimidio, düabus |  Tabernis  |
-##  [159.txt, 260]                       et partem eius super illam |  Tabernam  |
-##   [16.txt, 445]                        ibidem, VII Curliculas et |  Tabernam  |
-##   [16.txt, 513]                            cum diss carnium, cum |  Tabernis  |
-##  [160.txt, 750]                                 : m loneum, duas |  tabernas  |
-##  [163.txt, 524]                        Molendino in Ochos, super |  Taberna   |
-##  [163.txt, 766]                   eorum heredibus ires laneos et |  Tabernas  |
-##  [164.txt, 360]          in villa Susschowiez Curiam Collonariam |  Tabernam  |
-##  [164.txt, 635]                         , laneum vnum censualem, |  Tabernam  |
-##  [168.txt, 444]                             0 quartali ouis, vna |  taberna   |
-##  [175.txt, 643]                         cum medio laneo et media |  taberna   |
-##    [18.txt, 35]                      Curiam in villa Vissoca eum |  Taberna   |
-##   [21.txt, 500]                        lyn et Zdynkoni de Jarohr |  Tabernam  |
-##  [217.txt, 481]                                     cum&#39; s, vnam |  tabernam  |
-##  [221.txt, 720]                    et duos laneos censuales tres |  tabernas  |
-##   [23.txt, 559]                   et duas Curticulas necnon vnam |  Tabernam  |
-##   [23.txt, 669]                            in s ili Laneo duabus |  Tabernis  |
-##  [232.txt, 282]                       , octo curticulis, quinque |  tabernis  |
-##   [24.txt, 290]                  Sonwald vendidit VII quartalia. |  Taberuam  |
-##   [25.txt, 107]                       tribus Curticulis et cum v |  Taberna   |
-##  [265.txt, 522]                         veri dotalieij dat ER Ej |  tabernis  |
-##   [27.txt, 539]             Olomucensis videlicet medium laneum&quot; |  Tabernam  |
-##  [305.txt, 158]                         , vnu subsidem cum media |  Taberna   |
-##   [31.txt, 350]                  Curiam cum quinque. quartalibus |  tabernam  |
-##  [352.txt, 726]                    curticulis, et tercia dimidia |  taberna   |
-##   [36.txt, 457]      Lucow duas araturas septimumdimidium laneos |  Tabernas  |
-##  [366.txt, 840]                     cum Jure emphiteo- lico duas |  tabernas  |
-##  [370.txt, 555]                              Msi orien bro ma et |  taberna   |
-##   [371.txt, 48]                   el dimidium septimum ortos XIV |  tabernas  |
-##  [371.txt, 355]                   duabus gasis sine agris tribus |  tabernis  |
-##  [372.txt, 253]                         vnum quartale ac ad vnam |  tabernam  |
-##  [378.txt, 720]                   agros tenentes vnum ortum duas |  tabernas  |
-##  [381.txt, 594]                        , cum Molendino et duabus |  tabernis  |
-##    [384.txt, 4]                                        1437. 380 |  taberna   |
-##  [387.txt, 540]                   duobus laneis preter censum de |  taberna   |
-##  [389.txt, 459]                        Buch- lowiez et in duabus |  tabernis  |
-##   [39.txt, 615]                        in medium laneum in agris |  taberne   |
-##   [39.txt, 624]                          censuales, lem in eadem |  taberna   |
-##  [390.txt, 712]                 quintam marcas quatuor laneis in |  taberna   |
-##  [392.txt, 192]           Orzechowe septem subsides censuales et |  tabernam  |
-##  [394.txt, 444]                    Curia cum duobus laneis media |  taberna   |
-##  [394.txt, 672]                     Bochorz in quatuor labels et |  taberna   |
-##  [394.txt, 837]                     et quinque ortu- lanis media |  taberna   |
-##   [395.txt, 87]                          vno quar- sident, media |  taberna   |
-##  [396.txt, 169]              minori licet Curiam allodialem duas |  Tabernas  |
-##  [397.txt, 482]                 villam Chilicze cum ambabus cutn |  taberna   |
-##   [398.txt, 45]                  in villa Wodyerad Septem laneos |  Tabernam  |
-##   [398.txt, 82]                  Wodyerad super septem laneis in |  taberna   |
-##  [398.txt, 677]                   fertones cum duobus grossis In |  taberna   |
-##  [398.txt, 685]                            grossos cum medio, In |  taberna   |
-##  [398.txt, 694]                            grossos eum medio, In |  taberna   |
-##  [398.txt, 701]                        oclo grossos cum melio In |  taberna   |
-##  [398.txt, 709]                      grossos cum, In Rozprchonis |  taberna   |
-##   [399.txt, 68]               Brzezolup Dimidium Sari laseaé res |  tabernas  |
-##   [399.txt, 82]                        purkrechty, et alias duas |  tabernas  |
-##  [399.txt, 253]                         dimidiam sep- man&#39; obro- |  taberna   |
-##  [400.txt, 362]               Oswyetiman in nouem laneis quinque |  tabernis  |
-##   [401.txt, 82]                      in dimidio tercio laneis et |  taberna   |
-##   [401.txt, 96]             in dictis hominibus huiusmodi laneos |  tabernam  |
-##   [403.txt, 59]                          laneos in Pyenczin, cum | tabernario |
-##  [403.txt, 880]                     insi Oppatówisz in Smolna et |  taberna   |
-##  [404.txt, 358]           vniuersis pertinencijs N dictos laneos | Taberriam  |
-##  [405.txt, 645]                       ilios duos lancus censu in |  taberna   |
-##   [41.txt, 219]                           laneis, Curiam cum.a à |  tabernam  |
-##  [410.txt, 271] pertinentibus pratis siluis communitatibus aquis |  taberna   |
-##  [410.txt, 694]    censuantibus liberis et possessionatis laneis |  tabernis  |
-##  [411.txt, 534]                   grossos census annui in laneis |  tabernis  |
-##   [42.txt, 280]                           Curiam Cum vna suales. |  Tabernam  |
-##  [421.txt, 375]                         in duobus laneis, duabus |  tabernis  |
-##  [421.txt, 400]                tinencijs ad dictam Curiam laneos |  tabernas  |
-##   [433.txt, 51]                     laneos et vnum quartale duas |  tabernas  |
-##  [434.txt, 204]                         et vnum quartale et tres |  tabernas  |
-##   [439.txt, 69]                       ad dictos agros seu laneos |  tabernam  |
-##   [44.txt, 381]              duas curticu- peu Molendinum mediam |  Tabernam  |
-##   [44.txt, 412]                   Herollycz Curiam Molen- dinum. |  Tabernam  |
-##   [44.txt, 524]                       Bedrzch de&quot; icouiez Curiam |  Tabernam  |
-##  [447.txt, 401]                   quod super Curia in Nielkowicz |  Taberna   |
-##  [447.txt, 470]                            , quam praytam d vnam |  tabernam  |
-##  [447.txt, 487]                     Jurispatronatus et dim agri, |  Tabernam  |
-##  [448.txt, 290]             eius heredibus Curiam Zarusskach cum |  Taberna   |
-##  [448.txt, 827]       et incultis hominibus censuantibus antibus |  Taberna   |
-##  [449.txt, 183]         Rubetis Censibus redii tibus prouentibus |  Taberna   |
-##   [45.txt, 643]          terciam partem Molendini terciam partem |  taberne   |
-##  [450.txt, 188]                     vocatur Ostru- owek, deserta |  Taberna   |
-##  [451.txt, 197]                        agrorum, Ortos et Quatuor |  Tabernas  |
-##  [451.txt, 207]               quibus Septem laneis praitis Ortis |  Tabernis  |
-##  [451.txt, 335]          ortis eciam censuantibus siluis Rubetis |  Taberna   |
-##  [451.txt, 774]                dictam Curiam spectantibus el vna |  Taberna   |
-##  [452.txt, 830]                     vocatur Ostruwek, et deserta |  taberna   |
-##   [46.txt, 364]    Nyelkowicz sextummedium laneos duas curüeulas |  tabernam  |
-##   [46.txt, 809]                   villa Charwat duos laneos vnam |  tabernam  |
-##   [47.txt, 668]                      Curiam iu Pornicz II laneos |  tabernam  |
-##   [48.txt, 164]                    heredis in Dr- holusch Curiam |  tabernam  |
-##    [49.txt, 38]                         . Curti- culis vno laneo |  Taberna   |
-##   [53.txt, 115]        suis heredibus Terciumdimidium laneos cum |  taberna   |
-##   [53.txt, 417]              Emphylico duas curticulas et mediam |  tabernam  |
-##   [54.txt, 813]                        . Sep laneos cum quartali |  tabernam  |
-##   [55.txt, 303]                 heredibus vnam Curiam cum Balneo |  tabernam  |
-##   [55.txt, 730]            Quinquaginta marcis cum Curia Rubetis |  Taberna   |
-##   [56.txt, 701]                        ortos et XX grossos super |  taberna   |
-##   [56.txt, 780]                   octo laneos vnum quartale vnam |  tabernam  |
-##   [59.txt, 451]                   , terciumdimidium laneum, vnam |  tabernam  |
-##   [63.txt, 372]               Curium arature Il laneos Censuales |  tabernam  |
-##   [64.txt, 573]                     Buk VIII laneos III subsides |  tabernam  |
-##   [64.txt, 599]                          rzibislao dicto illa H: |  taberna   |
-##    [65.txt, 55]            Wissowicz XVIII laneos cum subsidibus |  tabernis  |
-##   [65.txt, 223]                villa Dobromilicz VID laneos vnam |  tabernam  |
-##   [65.txt, 380]                alterummedium la-&amp; neos censuales |  tabernam  |
-##   [67.txt, 322]                  vna virga medium Judicium media |  Taberna   |
-##    [69.txt, 92]               laneos soluentes II curüculas duas |  tabernas  |
-##   [69.txt, 666]                  VIII laneos III subsides mediam |  tabernam  |
-##     [7.txt, 63]                lendina quatuor Ortos duas medias |  tabernas  |
-##    [7.txt, 335]              minio eum fluminibus pratis rubelis |  Tabernam  |
-##   [70.txt, 104]                arature IHIT laeos minus quartali |  tabernam  |
-##   [74.txt, 708]                 quartalia medium laneum me- diam |  tabernam  |
-##   [74.txt, 798]                   laneum ) medium balneum mediam |  tabernam  |
-##   [75.txt, 548]                        censuales, Molendinum, II |  tabernas  |
-##   [76.txt, 116]                         super Cu- ria aralure et |  taberna   |
-##   [77.txt, 115]                 [ laneos censuales duos subsides |  tabernam  |
-##   [79.txt, 236]                        Neczsicz super pius NE et |  taberna   |
-##    [83.txt, 56]                 la- meos censuales duos subsides |  Tabernam  |
-##   [83.txt, 279]                 villa Musch- nicz Curiam arature |  tabernam  |
-##   [83.txt, 289]                  vniuersis que ante tenuerunt et |   Tabere   |
-##   [84.txt, 181]                 cum omnibus suis perlineneijs in |  tabernis  |
-##   [85.txt, 454]                        annui census in laneis et |  tabernis  |
-##   [85.txt, 649]                  uil Ogpstoviox VIII subsides et |  tabernam  |
-##   [90.txt, 385]              vno quartali quatuor curticulas III |  tabernas  |
-##   [98.txt, 883]                      talia tres subsides el vnam |  tabernam  |
-##                                                    
-##  et vnum quartale et duos                          
-##  cum quartali arature, Molendinum                  
-##  minorem cum sua area,                             
-##  , et duobus ubsidi nye                            
-##  in Syemrze Jure supradicto.                       
-##  Balneum, tres piscinam,                           
-##  . Tribus süisdius duabus 1                        
-##  Molendinum Rubetum ídia- chil sibi                
-##  et subside in quibus octauamdimidia               
-##  , siluas ommibus et singulis                      
-##  im villa Symrze, nichil                           
-##  , Quinque Curtieulas magnas,                      
-##  Molendinum Curiam siluis Rubetis Curticulam       
-##  censualem, ortis pratis pomerijs                  
-##  sine agris, et ipse                               
-##  et tribus curticulis Quinquaginta marcas          
-##  III, Molendinum, tria                             
-##  VII praytis dictis purchrechtnycze,               
-##  , que censui t dominio                            
-##  cum dimidio laneo censualem ires                  
-##  ol duas Curliculas desertas cum                   
-##  et vnam Curticulam. 490                           
-##  per- tinencijs vsibus fructibus Jure              
-##  eum subside Rubetum et Purgrech-                  
-##  ( F. LI.                                          
-##  pleno iure el dominio nichil                      
-##  vno? ) subside,                                   
-##  , vno quartalj, et                                
-##  , tres curtculas eo Jure                          
-##  et viginti duos grossos census                    
-##  , Molendino Centum mar- racio                     
-##  , tres&quot; airicus pratis                            
-##  , eo Jure quo ipse                                
-##  in- clusis et Rubetis.                            
-##  extabulandi et endi, ad                           
-##  , ortum, ilui.                                    
-##  , et. suis heredibus                              
-##  me- dium laneum et vitii                          
-##  , vnum pratum et alias                            
-##  , fluuios prata pascua pleno                      
-##  Molendinis Jurepatronatus esi moribus piscinis    
-##  et eciam vno laneo ibidem                         
-##  omnibus alijs perünencijs vendidit hereditarie    
-##  et super tercia Ta- berna                         
-##  , Juris ecclesie patronatus vide-                 
-##  , tres laneos in villa                            
-##  , et omni dominio prou                            
-##  , tres curli- culas cum                           
-##  ibidem in Kocor quinquaginta marcas               
-##  in villa Liecz icz dat                            
-##  et duas Curticulas eum Siluis                     
-##  censualem, ortum censualem et                     
-##  Molendino et quinque Curticuis Triginta           
-##  et II curticulas. cum                             
-##  silu pratis et orto el                            
-##  laneum et quinque curlieulas cum                  
-##  et vnam curticulam et in                          
-##  braxaliles, quatuor curticulas et                 
-##  nomine dotalicij XXX Mareis grossorum             
-##  et VI cur- liculis cum                            
-##  , duobus maccellis, medio                         
-##  et Moles ibidem. Benessio                         
-##  Siluis ati paseuis et cum                         
-##  , o oisi: 31                                      
-##  maiorem censuaneia III fertones e                 
-##  nichil ibidem sibi reser- sando                   
-##  eurticulam eum pratis paseuis,                    
-##  Molendino inferiori et in quarta                  
-##  ABULAE TERRAE MORAVIAE. duas                      
-##  , quas homines sub censu                          
-##  ac vniuersis pertinencijs Curie eiusdem           
-##  Curiam ibidem cum Robots,                         
-##  et eius pertinencijs vniuersis decem              
-##  eius omni- bus pertinencijs vniuersis             
-##  Braxatiles et duas non braxatiles                 
-##  libere Draxantibus cum siluis lucis               
-##  subside et duobus ortis ac                        
-##  , et quatuor ortos ibi-                           
-##  et in subsidibus ad eandem                        
-##  , duodecim grossos censuales,                     
-##  . quintummedium grossum Censuantem,               
-##  braxatili in hominibus cen- sualibus              
-##  non braxatilem inter illos sub-                   
-##  Molendino cum aquis et littoribus                 
-##  et duobus subsidibus, i                           
-##  in hijs omnibus et singulis                       
-##  medio laneo et Jure et                            
-##  braxatiles Tres venil et vnum                     
-##  braxatili agris cultis et incultis                
-##  et curticulam Benessio de Bozkowiez               
-##  et in cur- is Tn                                  
-##  WMiczonis octo grossos cum medio                  
-##  Johannis carnificis oclo grossos eum              
-##  Kunssonis oclo grossos cum melio                  
-##  Mathissonis nouem grossos cum,                    
-##  nouem cum medio et in                             
-##  censuales, quas proprias habent                   
-##  , [ uas homines agros                             
-##  im hominibus censualibus et non                   
-##  et quinque curticulis et molendino                
-##  et quinque ortis ibidem in                        
-##  et ortos tenentibus presen- libus                 
-##  Jure dimidia altera curticula hominibus           
-##  in Lhota ac super tercia                          
-##  et Subsidem. TABULAE TERRAE                       
-##  excluso et super quatuor ortos                    
-##  Balneum piscinam silvas Prata cum                 
-##  milenio. et bnmer homines                         
-##  ac super illa sexagena grossorum                  
-##  ortis computatis alias shadany,                   
-##  quatuor Curtius Rubetos priui er                  
-##  et nouem curticulis ac hominibus                  
-##  et curticulas ab antiquo spectantibus             
-##  Balneum quatuor subsides quatuor ortos            
-##  braxatiles pratum in Strabyssow et                
-##  subsidem et me- dium Molendini                    
-##  medium i et medietatem.                           
-##  tres curticulas pratum cum vniuersis              
-##  me- dium xoliudin vnam eurticulam                 
-##  et vna curti- cula consistit                      
-##  tenent, Molendinum et duas                        
-##  Ortum et tres Curticulas et                       
-##  Braxatili vnum laneum Sex?                        
-##  Braxatili censibus solibus vilae robotlis         
-##  Braxatili lluminibus duabus piscinis,             
-##  cum omnibus ad ipsam Curiam                       
-##  Bri et Bernali et omnibus                         
-##  Braxatiles duo Molendina de quibus                
-##  et Mo- annui, cum                                 
-##  agris cullis et incultis pascuis                  
-##  penes Curiam iacente agris cultis                 
-##  iran Bra pertinencij agii et                      
-##  cum ipsius vniuersis perlinen- eijs               
-##  duas curticulas vno agro hereditario              
-##  curticulam lendinis et in villa                   
-##  ledio laneo in Mi- lenow                          
-##  cum ipsorum bonorum vniuersis pertinencijs        
-##  in Rosczyn vendidit hereditarie possidendos       
-##  cum agris siluis Juribus dominijs                 
-##  ortum cum siluis Ju- ribus                        
-##  medium laneum cum orto Rubeli                     
-##  et alia omnia et singula                          
-##  , et III grossos super                            
-##  in Tuczyn ecclesie Olomu- ensi                    
-##  cum Molendino, balneum,                           
-##  cum Rubetis et ceteris bonis                      
-##  Jure hereditario possidendos, quod                
-##  et in a duos láneos                               
-##  Jurepatronatus vniuersis perünencijs pleno dominio
-##  III subsides cum pleno dominio                    
-##  et subsidem in XXV mar-                           
-##  Silua dicta Sezar cum ommibus                     
-##  vnum molen- dinum cum pleno                       
-##  pleno do- minio et omni                           
-##  , Item XX laneos cum                              
-##  maiorem vnde idem Fridricus diuisit               
-##  duas partes Balnei cum omni                       
-##  eo Jure quo tenuit nichil                         
-##  eo Jure quo tenuit niehil                         
-##  , mediam piscinam cum rubelis                     
-##  libere assignauil. ) 266                          
-##  eo Jure quo tenuit nichil                         
-##  racione. veri dotaici eidem                       
-##  cum om- nibus suis pertinencijs                   
-##  rubetum pratum ci pertineneijs vniuersis          
-##  vebantur nichil penitus eis Juris                 
-##  Jus do- talieij iud habui                         
-##  dedit libere et assignauit Jure                   
-##  et tre liberum de aratura                         
-##  ( et mediam partem ville                          
-##  Curiam arature eum vniuersis suis</code></pre>
+kwic(desky2_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 377 matches.                                                                                                                                    
+##    [10.txt, 697]                      lays et heredes suos Curiam |  Tabernam   | et vnum quartale et duos                          
+##   [105.txt, 190]             Curias arature Tres laneos Censuales |  Tabernam   | cum quartali arature, Molendinum                  
+##    [106.txt, 97]                             , Mo lendinum minus, |  Tabernam   | minorem cum sua area,                             
+##   [106.txt, 507]                           et super vno quartali, |   Taberna   | , et duobus ubsidi nye                            
+##   [108.txt, 409]                         possi- denda, eciam vnam |  Tabernam   | in Syemrze Jure supradicto.                       
+##   [109.txt, 259]                Malcouicz Curiam el septem laneos |  Tabernam   | Balneum, tres piscinam,                           
+##   [109.txt, 306]                    et duobus laneis super Balneo |   Tabernm   | . Tribus süisdius duabus 1                        
+##   [111.txt, 360]                       et VII Cur- liculas mediam |  tabernam   | Molendinum Rubetum ídia- chil sibi                
+##   [112.txt, 388]                              et vno. quartali et |   Taberna   | et subside in quibus octauamdimidia               
+##   [112.txt, 483]                            Jui clesie, sides IIL |  Tabernas   | , siluas ommibus et singulis                      
+##   [113.txt, 555]               et pertinencijs Molendinum et vnam |  tabernam   | im villa Symrze, nichil                           
+##    [115.txt, 62]               Vazan octauumdimidium laneos, duas |  Tabernas   | , Quinque Curtieulas magnas,                      
+##   [116.txt, 305]                     Paczlauicz Quin-. que laneos |  Tabernam   | Molendinum Curiam siluis Rubetis Curticulam       
+##   [117.txt, 112]                     arature ll laneos Censuales, |  Tabernam   | censualem, ortis pratis pomerijs                  
+##   [118.txt, 102]                           vno laneo censuali, et |   Taberna   | sine agris, et ipse                               
+##   [118.txt, 592]                           sue in villa sualibus, |   Taberna   | et tribus curticulis Quinquaginta marcas          
+##   [118.txt, 677]                          maiores et III minores, |  Tabernas   | III, Molendinum, tria                             
+##   [118.txt, 750]               quartodimidio laneo ibidem, tribus |  Tabernis   | VII praytis dictis purchrechtnycze,               
+##   [118.txt, 783]                        quartalia sss lien in Lo- |  tabernam   | , que censui t dominio                            
+##   [119.txt, 255]                 in villa Podole Curiam predialem |  tabernam   | cum dimidio laneo censualem ires                  
+##   [120.txt, 841]                     Curiam quinque laneis et vna |   Taberna   | ol duas Curliculas desertas cum                   
+##   [121.txt, 131]                         et in Dolan habeant vnam |  tabernam   | et vnam Curticulam. 490                           
+##   [121.txt, 648]              Opidum Brodek cum vniuersis Incolis |  Tabernis   | per- tinencijs vsibus fructibus Jure              
+##   [123.txt, 292]                           . Rande. 119 censualem |  tabernam   | eum subside Rubetum et Purgrech-                  
+##   [125.txt, 504]                        Curia prediali, vigi duas |  tabernas   | ( F. LI.                                          
+##   [126.txt, 375]                       laneos et tres Subsides et |  tabernam   | pleno iure el dominio nichil                      
+##    [13.txt, 803]                         et. septem Curliculas et |   thaber    | nam PE cum omni Jure                              
+##   [131.txt, 676]              Sdenconi Lad Johanni Quinque laneis |   Taberna   | vno? ) subside,                                   
+##   [132.txt, 402]                 Senicz cum torciodinidio laneis, |   Taberna   | , vno quartalj, et                                
+##   [132.txt, 672]                        Quinque cum medio laneos, |  Tabernam   | , tres curtculas eo Jure                          
+##   [134.txt, 110]                  Curiam predialem uatuor laneos, |  Thabernam  | , duos subsides cum uiuersis                      
+##   [134.txt, 422]                villa Kozyzchan Curiam predialem, |  Thabernam  | , curticulam, cum vniuersis                       
+##   [134.txt, 482]                       grossis Census in et super |  Thaberna   | eo Jure quo tenuit,                               
+##   [134.txt, 742]                         duos laneos cum dimidio, |  Thabernam  | , Curticulam parwam cum vniuersis                 
+##    [135.txt, 39]                  villa Paezlawiez super laneo et |  Thaberna   | fu. decem marcas grossorum                        
+##    [135.txt, 76]                      suis heredibus in villa Se- |  Tabernam   | et viginti duos grossos census                    
+##   [135.txt, 374]                          quod Sirawa dicitur, in |  Thabernis  | , subsidibus, agris,                              
+##   [135.txt, 548]                     dimidium Janeum, Molendinum, |  Thabernam  | , Curüculam maio- rem et                          
+##   [136.txt, 410]                  villa Bistrzicz tria quarlalia, |  Thabernam  | cum pleno Jure et dominio                         
+##   [136.txt, 638]                         , medium Dalneum, mediam |  Thabernam  | eo Jure quo tenuit,                               
+##   [136.txt, 827]                       Suales, Curticolam, mediam |  Thabernam  | eo Jure omni, uo                                  
+##   [138.txt, 122]        oriens Quatuordecim laneos Censuales duas |  Thabernas  | , um suis prouencionibus i                        
+##   [138.txt, 178]                         , Sex Curticulas, mediam |  Thabernam  | cum omnibus M singulis pertinencijs               
+##   [138.txt, 245]                         Sex Cur- liculas, mediam |  Thabernam  | cum omnibus et singulis suis                      
+##   [138.txt, 652]                  quatuor laneos minus Censuales, |  Thabernam  | cum suis vsibus, pleno                            
+##    [14.txt, 309]               araturam vnum laneum soluentem cum |  Thaberna   | e Silua Pratis jmeeps et                          
+##    [141.txt, 12]                            1382. uis curticulis, |   Taberna   | , Molendino Centum mar- racio                     
+##   [142.txt, 414]                         Y laneos soluentes, duas |  tabernas   | , tres&quot; airicus pratis                            
+##   [143.txt, 156]                          Molendinum, et in willa |  Tabernam   | , eo Jure quo ipse                                
+##   [143.txt, 211]            didit heredilarie possidendam, tribus |  tabernis   | in- clusis et Rubetis.                            
+##   [144.txt, 525]                      mer r Molendino medio laneo |   taberna   | extabulandi et endi, ad                           
+##   [147.txt, 245]                               ) in Orzechove, VI |  Tabernam   | , ortum, ilui.                                    
+##   [147.txt, 716]                             nicz? ) in Poczenicz |  Tabernam   | , et. suis heredibus                              
+##   [150.txt, 611]                            , Item in Tuczyn vnam |  tabernam   | me- dium laneum et vitii                          
+##   [151.txt, 209]            villa Rosczyn terciumdimidium laneum, |  tabernam   | , vnum pratum et alias                            
+##    [153.txt, 12]                       ) Curiam in villa Cozussan |  Tabernam   | , fluuios prata pascua pleno                      
+##   [154.txt, 164]                           In- colis, Subsidibus, |  tabernis   | Molendinis Jurepatronatus esi moribus piscinis    
+##   [156.txt, 612]              duabus porcionibus molendini, super |   taberna   | et eciam vno laneo ibidem                         
+##   [158.txt, 192]                 Sdyetyn Zuboni et suis heredibus |  tabernam   | omnibus alijs perünencijs vendidit hereditarie    
+##   [158.txt, 301]          pratis pascuis siluis molendino riuulis |  thabernis  | et omnibus alijs pertinencijs,                    
+##   [158.txt, 698]                  quartalibus cum dimidio, düabus |  Tabernis   | et super tercia Ta- berna                         
+##   [159.txt, 260]                       et partem eius super illam |  Tabernam   | , Juris ecclesie patronatus vide-                 
+##    [16.txt, 445]                        ibidem, VII Curliculas et |  Tabernam   | , tres laneos in villa                            
+##    [16.txt, 513]                            cum diss carnium, cum |  Tabernis   | , et omni dominio prou                            
+##   [160.txt, 750]                                 : m loneum, duas |  tabernas   | , tres curli- culas cum                           
+##   [163.txt, 524]                        Molendino in Ochos, super |   Taberna   | ibidem in Kocor quinquaginta marcas               
+##   [163.txt, 766]                   eorum heredibus ires laneos et |  Tabernas   | in villa Liecz icz dat                            
+##   [164.txt, 360]          in villa Susschowiez Curiam Collonariam |  Tabernam   | et duas Curticulas eum Siluis                     
+##   [164.txt, 635]                         , laneum vnum censualem, |  Tabernam   | censualem, ortum censualem et                     
+##   [168.txt, 444]                             0 quartali ouis, vna |   taberna   | Molendino et quinque Curticuis Triginta           
+##   [168.txt, 635]                    ires laneos censuales cum vna |  thaberna   | et fübro dat hereditarie possidendum              
+##   [169.txt, 473]                     Luezenezicz tres Kg gemis et |  thabernam  | dat hereditarie et r S07                          
+##   [171.txt, 257] Prouentibus Aquis fluminibus molendinis piscinis |  thabernis  | pratis pascuis venacionibus Auci cionibus         
+##   [173.txt, 245]                         ibus cum dimidio, duabus |  thabernis  | et tercia gene vnius thaberne                     
+##   [173.txt, 250]                   thabernis et tercia gene vnius |  thaberne   | , que sex grossos annue                           
+##   [175.txt, 643]                         cum medio laneo et media |   taberna   | et II curticulas. cum                             
+##     [18.txt, 35]                      Curiam in villa Vissoca eum |   Taberna   | silu pratis et orto el                            
+##   [182.txt, 358]                    allero- medio laneo censuali, |  Thaberna   | et curticula )&#39; )                                 
+##   [182.txt, 880]                         duos laneos, Molendinum, |  Thabernam  | , et tres Curliculas,                             
+##   [183.txt, 451]                  ipsius dimidio laneis et duabus |  thabernis  | vendidit eo Jure dotalicij,                       
+##   [183.txt, 618]                  villa Pienczicz III laneos vnam |  thabernam  | vnam curticulam et in villa                       
+##   [183.txt, 679]                     Chwalkowiez XII laneos, vnam |  thabernam  | . et partem. vnius                                
+##   [183.txt, 742]                      kowiez super XII laneis vna |  thaberna   | et parte illius silue,                            
+##   [183.txt, 962]                     ibidem in Buchlowicz et tres |  thabernas  | et in ( sic )                                     
+##   [184.txt, 181]                                   * ) laneo, vna |  Thaberna   | et media Cur- icula cum                           
+##   [184.txt, 290]                               , sex laneos, duas |  thabernas  | , duas Curiiculas et medium                       
+##   [184.txt, 345]              suis heredibus Curiam allodialem et |  thabernam  | in villa. Kozussany cum                           
+##   [184.txt, 746]                            allo- dialem, cum vna |  Thaberna   | in villa Kozussan cum pratis                      
+##   [185.txt, 332]                    super duobus laneis et duabus |  thabernis  | et sex curliculis cum is                          
+##   [185.txt, 801]                   dimidio laneis et quartali vna |  thaberna   | et molendino et quinque curticulis                
+##   [188.txt, 791]               vxori sue super Curiam Domamyslicz |  Thaberna   | et medio molendino et eorum                       
+##    [189.txt, 19]                                sue, super laneo, |  Thaberna   | , Molendino, piscina,                             
+##   [189.txt, 203]                         in villa Lukowyo, Curiam |  Thabernam  | et po- merium cum suis                            
+##    [190.txt, 65]                    pascuis Siluis su- per tribus |  thabernis  | et tribus Curliculis cum.                         
+##    [192.txt, 91]                 villa Malkowicz tres. Curüiculas |  Thabernam  | , Balneam et dominio,                             
+##   [192.txt, 227]                   Misliborio et Marsiconi fra- a |  thabernas  | cum duabus curticulis el.                         
+##   [192.txt, 936]                        laneis, Item super tribus |  thabernis  | cum duabus curticulis, Item                       
+##   [194.txt, 125]                            di- midio laneis, vna |  thaberna   | , cum eurticula siue agro                         
+##    [197.txt, 53]                   laneos, duas eurticulas mediam |  thabernam  | medium ortum cum omnibus eorum                    
+##   [197.txt, 241]                         molendino, libus, duabus |  thaberni   | : cione et cum al                                 
+##    [198.txt, 56]                      et quinque laneis et duabus |  thabernis  | censuantibus racione veri dotalicij in            
+##    [198.txt, 93]                  et quatuor laneos cum Molendino |  thaberna   | tri- bus curliculis cum agris                     
+##   [198.txt, 146]                   Honyeticz super Curia et laneo |  thaberna   | Curlicula et alijs perünencijs racione            
+##   [198.txt, 376]                       , et vnum laneum censualem |  thabernam  | curticu- lam cum siluis piscina                   
+##   [198.txt, 724]            suis heredibus Curiam tres curticulas |  thabernam  | et medium quartale cum agris                      
+##   [199.txt, 426]            heredibus in villa Sulessowiez Curiam |   Thaber    | . mam et duas curliculas                          
+##   [199.txt, 488]                 Margarethe vxori sue super Curia |  Thaberna   | et duabus curliculis et in                        
+##   [201.txt, 305]                    Item in Hrabysyne tres laneos |  thabernam  | . et fabrum. Item                                 
+##   [204.txt, 786]                     septem laneis cum dimidio et |  Thaberna   | minori iidem Jus dotalicij,                       
+##   [204.txt, 869]                        dem in Lukowa super Curia |  thaberna   | et Curticula cum eorum pertinencijs               
+##   [207.txt, 118]                             or- tulanos, et vnam |  thabernam  | cum pomerijs pratis cum.                          
+##   [207.txt, 479]                         cum medio Balneo, tribus |  thabernis  | Curticulis et piscinis, et                        
+##   [207.txt, 775]                          super Sex laneis et vna |  thaberna   | . in Centum quinquaginta marcis                   
+##   [208.txt, 578]                    vnum laneum in Nezdenycz duas |  Thabernas  | et duas Curticulas cum Jurepatronatus             
+##    [21.txt, 500]                        lyn et Zdynkoni de Jarohr |  Tabernam   | laneum et quinque curlieulas cum                  
+##   [211.txt, 179]                    . molendini et terciam partem |  thaberne   | , que sunt sita inter                             
+##   [212.txt, 913]                         Buk et in Radwanycz vnam |  thabernam  | . hominibus censualibus, et                       
+##   [214.txt, 175]                       minus medio quartali, duas |  thabernas  | ,, Septem curtieulas censuales                    
+##   [214.txt, 541]                        laneos censuales, et duas |  thabernas  | , tres curticulas, Molendinum                     
+##   [215.txt, 119]                    super Curia allodiali, laneis |  thaberna   | , Corticulis et alijs vniuersis                   
+##   [215.txt, 203]               cum quatuor curtieulis censualibu: |  thaberna   | censuali, eum quarta Ecclesie                     
+##   [216.txt, 558]                      vnum laneum censualem, vnam |  thabernom  | , vnam curticulam, cum                            
+##   [216.txt, 732]                   quatuor laneos censuales, vnam |  thabernam  | , quinque curticulas et medium                    
+##   [216.txt, 759]                 censuales et tres curticulas cum |  thaberna   | cum pleno Jure et dominio                         
+##   [216.txt, 812]                  quatuor laneis censualibus, vna |  thaberna   | , quinque curticulis, siluis                      
+##   [217.txt, 481]                                     cum&#39; s, vnam |  tabernam   | et vnam curticulam et in                          
+##   [219.txt, 234]                         , duabus curtieulis, vna |  thaberna   | . ma Wozyczy ires marcas                          
+##    [22.txt, 233]                      eum aratura Rubetum laneum&quot; |  Thabernam  | et duas Curticulas cum omni                       
+##   [220.txt, 381]                   laneos censuales quatuor, vnam |  thabernam  | , quinque Curticulas, et                          
+##   [221.txt, 720]                    et duos laneos censuales tres |  tabernas   | braxaliles, quatuor curticulas et                 
+##   [221.txt, 955]                          , tres curliculas, duas |  thabernas  | 1 3 ) Unmittelbar vor                             
+##   [226.txt, 275]                       , quatuor curticulas, vnam |  thabernam  | , et nemora, cum                                  
+##   [226.txt, 324]                       qua- tuor Curticulis, vnam |  thaberna   | et nemoribus Centum defi- Et                      
+##   [226.txt, 803]                      sibi in villa Zdyetyn super |  thaberna   | et laneis censualibus et curticulis               
+##   [227.txt, 631]                       . us tribus curticulis vna |  thaberna   | Molendino ad Quem pertinente,                     
+##    [228.txt, 38]                 quintum dimi- annui census super |  Thaberna   | et quatuor grossos annui census                   
+##   [228.txt, 113]                   sex grossos annui census super |  Thaberna   | et quatuor grossos census annui                   
+##   [228.txt, 769]              super tribus laneis censualibus vna |  thaberna   | et vna curticula, Item                            
+##    [23.txt, 559]                   et duas Curticulas necnon vnam |  Tabernam   | nomine dotalicij XXX Mareis grossorum             
+##    [23.txt, 669]                            in s ili Laneo duabus |  Tabernis   | et VI cur- liculis cum                            
+##   [230.txt, 655]                   purkrecht cum pratis Siluis et |  Thabernis  | Curticulis media p alijs eorum                    
+##   [230.txt, 700]                   is dictis krecht pratis Siluis |  thabernis  | Pc s t alijs per-                                 
+##   [230.txt, 809]                           duos paruos agros, Sex |  thabernas  | , Quatuor curticulas, quinquoNjwas                
+##   [231.txt, 184]                 Curia allodiali in Su- lessowicz |  Thaberna   | et duabus Curtieulis et alijs                     
+##   [232.txt, 282]                       , octo curticulis, quinque |  tabernis   | , duobus maccellis, medio                         
+##   [236.txt, 625]                 laneis Quatuor Curliculis et vna |  thaberna   | et. eorum pertinencijs Sep-                       
+##   [236.txt, 714]               censualibus et Quinque Curticulis, |  Thaberna   | , Siluis pratis paseuis et                        
+##    [24.txt, 290]                  Sonwald vendidit VII quartalia. |  Taberuam   | et Moles ibidem. Benessio                         
+##   [245.txt, 678]                       quar- lali et super Tribus |  Thabernis  | ibidem in Chwalnow et.                            
+##   [245.txt, 847]                   vnam marcam census annui super |  Thaberna   | el super medio laneo Centum                       
+##   [249.txt, 638]                   et quinque Curticulis et super |  Thaberna   | , et in Chwal- now                                
+##    [25.txt, 107]                       tribus Curticulis et cum v |   Taberna   | Siluis ati paseuis et cum                         
+##    [250.txt, 68]                cum dimidio Ianeos censuales Tres |  thabernas  | cum duabus curticulis et alias                    
+##   [250.txt, 685]                     laneis cen- sualibus, Tribus |  Thabernis  | et duabus Curticulis et super                     
+##   [251.txt, 558]                            , et super Molendino, |  Thaberna   | et Et Henricus Albus illud                        
+##    [252.txt, 38]                        , duas curticulas et vnam |  Thabernam  | , cum siluis, nichil                              
+##    [252.txt, 81]               Sex laneorum duarum Curücularum et |  thaberne   | ac siluarum, quas Ma                              
+##   [252.txt, 111]             Sextum dimidium laneos censuales cum |  thaberna   | cum Molendino ibidem sub villa                    
+##   [252.txt, 773]                         Curiam additus est, duas |  thabernas  | , Balneum, quinque curticulas                     
+##   [252.txt, 828]                        tres E vnam Curticulam et |  Thabernam  | * » vendidi per- pe                               
+##  [252.txt, 1009]                                 von, Item tres - |  Thabernam  | * ist durch- strichen.                            
+##   [259.txt, 746]                        duas cur- liculas, mediam |  thabernam  | , medium ortum cum omnibus                        
+##   [260.txt, 472]                          , mediam Curiam, mediam |  Thabernam  | , me- 1406. dietatem                              
+##   [260.txt, 622]                     allodialem, tres curticulas, |  Thabernam  | , et me- dium quartale                            
+##   [260.txt, 856]                           , cum Molendino et vna |  Thaberna   | , cum vna stacione carnium                        
+##   [261.txt, 786]                     cum Quinque laneis el duabus |  thabernis  | , Molendino, et octo                              
+##   [262.txt, 734]                nibus hominibus censualibus, Item |  Thabernam  | cum piscinis et siluis ac                         
+##   [263.txt, 176]                              , duos laneos, Tres |  thabernas  | et quatuor Curticulas, Item                       
+##   [263.txt, 192]                           , quatuor laneos, vnam |  Thabernam  | , Baleum et Tres Curticulas                       
+##   [265.txt, 121]                        agrorum, Item supe tribus |  thabernis  | , vno Molei super vectura                         
+##   [265.txt, 522]                         veri dotalieij dat ER Ej |  tabernis   | , o oisi: 31                                      
+##    [266.txt, 30]                        eum vno laneo censuali et |  thaberna   | ac cum cur- ticulis ad                            
+##    [27.txt, 539]             Olomucensis videlicet medium laneum&quot; |  Tabernam   | maiorem censuaneia III fertones e                 
+##   [270.txt, 820]                  , videlicet duodecim lines duas |  thabernas  | , duas curüiculas, duo                            
+##    [272.txt, 63]              Prussynowiez tria quarlalia et vnam |  Thabernam  | eum suis pertinencijs pleno Jure                  
+##   [272.txt, 832]                                ac Area, vbi fuit |  Thaberna   | ac prato, pascuis,                                
+##   [275.txt, 519]                  suis heredibus In villa Zdyetyn |  Thabernam  | braxatilem cum agris ad illam                     
+##   [278.txt, 739]                   Quinque laneos censuales, duas |  thabernas  | braxatiles, octo Curtieulas,                      
+##    [280.txt, 82]                         , quinque Curiculas, vna |  thaberna   | Mosa libera, agris culis                          
+##   [280.txt, 857]                       super duobus laneis et vna |  thaberna   | , et in Dyessow super                             
+##   [281.txt, 120]                            io tercio laneis, vna |  thaberna   | Wozeczye Tres marcas grossorum con                
+##   [281.txt, 469]                                 Annam? bis g 217 |  thaberna   | , agris cultis et etis                            
+##   [283.txt, 492]                 Jure heredilario Piaaebo, Tribus |  thabernis  | ibidem inclusis, quas eciam                       
+##   [283.txt, 591]                           , et b curticulas vnam |  thabernam  | . cum pratis, siis                                
+##   [284.txt, 967]                     laneis minus vno quartali et |  thaberna   | et toto censu dictorum laneorum                   
+##   [285.txt, 341]                   octauum laneos censuales, vnam |  thabernam  | , tres Cur- liculas et                            
+##   [286.txt, 591]           heredibus renuncciat quatuor laneos et |  thaberne   | in Poczenyes, quia illa                           
+##   [286.txt, 825]           Jurepatronatus ecclesie ibidem, duabus |  thabernis  | , dua- bus Curliculis ac                          
+##   [287.txt, 705]                    in Sulessowicz Curiam cum vna |  thaberna   | , duabus Curticulis, et                           
+##   [287.txt, 894]                   vallibus, venacionibus, duabus |   thaber    | - nis, duabus curticulis                          
+##   [288.txt, 420]                       Lhota. quinque laneorum et |  thaberne   | cum pertinencijs dicto rum bonorum                
+##   [288.txt, 534]                 quatuor laneos censuales et vnam |  thabernam  | , que a Dyetochone de                             
+##   [288.txt, 564]                      in diclis quatuor laneis et |  thaberna   | Juris proprietatis aut. dominij                   
+##   [288.txt, 879]               quatuor laneis censualibus, tribus |  thabernis  | et vndecim minoribus curliculis decem             
+##    [289.txt, 35]                   dietis qua- tuor laneis tribus |  thabernis  | ct XI curticulis competit vin                     
+##   [290.txt, 651]                      . Scenes Curiam allodialem, |  Thabernam  | et curticulam et medium.                          
+##   [293.txt, 156]                       , ortis hinnuletis, duabus |  thabernis  | et octo curticulis, limitibus                     
+##   [293.txt, 363]                 dotal Schulessowicz super Curia, |  thaberna   | et duabus curticulis a Wilhelmo                   
+##   [293.txt, 915]                      quarto dimidio laneis, Cur- |  Thaberna   | , nichil ibidem sibi reseruando                   
+##   [294.txt, 509]                  laneis censualibus et super vna |  thaberna   | Triginta marcas grossorum Jure veri               
+##   [294.txt, 983]                           , et sex curliculis ac |  Thaberna   | duodecim tin-                                     
+##   [295.txt, 134]                     cum tercio dimidio laneis et |  thaberna   | braxatili ac Curticula? )                         
+##   [295.txt, 282]                          et duobus laneis ac vna |  thaberna   | inferiori ibidem Officiales est inducta           
+##   [295.txt, 314]                                  Curia, prata i, |  thaberna   | et curticule inuente fuerint,                     
+##   [298.txt, 116]                       et vnam Curticulam et vnam |  Thabernam  | et balneum ei cum duobus                          
+##    [300.txt, 17]                     quartali ibidem et super vnà |  Thaberna   | in Opathowicz, et super                           
+##   [300.txt, 528]                     In et super iidem Molendinis |  Thabernis  | . t laneo uc super                                
+##   [300.txt, 868]          Sborowicz quinque laneos censuales Duas |  Thabernas  | et vnam Cur liculam agrorum                       
+##   [300.txt, 906]                     deccm laneos censuales, duas |  thabernas  | , Quinque Curticulas agrorum,                     
+##   [301.txt, 867]                           censu: ibidem super na |  thaberna   | et tribus emphiteotis diclis Purkrechti           
+##    [302.txt, 63]                   super tribus Curticulis et vna |  thaberna   | pratis pascuis robollis el rubelis                
+##   [302.txt, 810]                       minus medio quartali, duas |  thabernas  | , Septem curticulas censuales,                    
+##   [303.txt, 342]                   censuales cum Robottis, mediam |  Thabernam  | , vnum M,,                                        
+##   [305.txt, 158]                         , vnu subsidem cum media |   Taberna   | nichil ibidem sibi reser- sando                   
+##   [305.txt, 393]                      quatuor laneos cen- suales, |  Thabernam  | cum sex curticulis, Agris                         
+##   [307.txt, 638]                              lan insta, n necnon |  thaberna   | et Curlicula et eius per                          
+##   [308.txt, 851]                    quartalia VIII Curticulas, II |  thabernas  | bra- xatiles et balneum,                          
+##   [309.txt, 302]                  tercium dimidium laneos et vnam |  thabernam  | el tres curticulas eo Jure                        
+##   [309.txt, 830]                    Osseczan Municio el laneus et |  thaberna   | sint ipsius el sue matris                         
+##    [31.txt, 350]                  Curiam cum quinque. quartalibus |  tabernam   | eurticulam eum pratis paseuis,                    
+##   [311.txt, 558]               sibi Jodocus curticulis agrorum et |  thaberna   | , Et in Kotogyed super                            
+##   [311.txt, 568]                  super lercio dimidio laneis vna |  thaberna   | et tribus curliculis agrorum et                   
+##   [313.txt, 264]                     pratis pascuis siluis et vna |  thaberna   | IV curliculis agrorum et eorum                    
+##   [314.txt, 557]                     czenyez super VIL laneis vna |  thaberna   | VIII curliculis, Item in                          
+##   [316.txt, 131]                       laneis el IV curtieulis et |  thaberna   | , et pratis et alijs                              
+##   [316.txt, 181]                super quatuor laneis censualibus, |  Thaberna   | et sex curticulis, decem                          
+##   [316.txt, 457]                        laneos censuales, et vnam |  Thabernam  | braxa- 1412. tilem,                               
+##   [319.txt, 216]                    curticulas minores, Item vnam |  thabernam  | braxalilem cum balneo, necnon                     
+##   [319.txt, 365]                         Anne de Kunkowicz In vna |  thaberna   | a maiore curticula, cum                           
+##   [320.txt, 433]                   octo laneos censuales, quatuor |  thabernas  | , Sex curticulas, Item                            
+##   [320.txt, 470]               Tyessan tres laneos censuales duas |  thabernas  | , i ticul dium Molendi                            
+##   [320.txt, 645]                        possessionati, Item. duas |  thabernas  | , duo prata, quorum                               
+##   [321.txt, 459]                        , tres curticulas, mediam |   thaber-   | pertineneijs vniuersis pleno Jure et              
+##   [322.txt, 239]              villa Zborowicz super tribus laneis |  Thaberna   | et vua curticula quinque marcas                   
+##   [322.txt, 413]                         AE TERRAE MORAVIAE. vnam |  thabernam  | braxatilem liberam, medium laneum                 
+##   [322.txt, 667]                        nouem laneis et super vna |  thaberna   | in medio ville sita et                            
+##     [323.txt, 9]                                     . V 1415. et |  Thaberne   | , que obtinet in Poczenycz                        
+##   [323.txt, 292]                    cum octo Curticulis et duabus |  thabernis  | el Molendinum cum agris pratis                    
+##   [323.txt, 421]                        et aliud quod iacet penes |  Thabernam  | inferiorem, Qua irsgina marcas                    
+##   [323.txt, 484]                    opposito Municionis, et super |  thaberna   | ! super medio laneo,                              
+##   [323.txt, 681]                      quinque laneos cen- suales, |  Thabernam  | Moxailem cum Nardi et flumine                     
+##   [325.txt, 499]                 vno quartali censuales Item duas |   thaber-   | nas, E.&#39;                                          
+##   [326.txt, 740]                Ossyeczan super septem laneis vna | thaberna.et | eorum pertinencijs oclo marcas census             
+##   [326.txt, 925]                       curtculis et paruo luco ac |  thaberna   | agris pratis pascuis Ed Worte                     
+##   [327.txt, 199]                  lem, quintumdimidium laneos cum |  thaberna   | et vnam Curliculam, cum                           
+##   [327.txt, 783]                  mi licet Curiam allodialem duas |  thabernas  | braxaliles tres curliculas et vnum                
+##   [330.txt, 442]                     septem laneos cum dimidio et |  thabernam  | minorem, Jure veri dotalicij                      
+##   [335.txt, 114]                    et vno quartali cen- sualibus |  Thaberna   | tribus Curticulis Siluis et pratis                
+##   [338.txt, 326]             villa super hominibus censualibus et |  thabernis  | , Item in lota villa                              
+##   [341.txt, 572]                               05. prs de inculis |  Thabernis  | Molendinis Sis et pratis pa                       
+##   [342.txt, 324]                         prouen- tibus, Item vnam |  Thabernam  | ibidem cum sex curticulis vineis                  
+##   [343.txt, 715]                            litatibus, ltem. duas |  Thabernas  | soluentes cum tribus earticalis:                  
+##   [346.txt, 179]                     septem laneos cum dimidio et |  thabernam  | minorem Jure veri dotalicij,                      
+##   [346.txt, 508]                          medium B. mediam partem |  Thaberne   | cum hominibus, iur fructibus                      
+##   [347.txt, 789]                 hereditario possidendum, Tri- us |  Thabernis  | ibidem inclusis, quas eciam                       
+##   [348.txt, 264]                videlicel Curiam allodialem, duas |  Thabernas  | Braxatiles, Tres Curticulas,                      
+##   [352.txt, 589]                     vno quartali et super lribus |  thabernis  | ibidem in Chwalnow et in                          
+##   [352.txt, 726]                    curticulis, et tercia dimidia |   taberna   | Molendino inferiori et in quarta                  
+##    [354.txt, 98]                    pro curticula reputatur, duas |  thabernas  | braxaliles et duas mon braxatiles                 
+##    [359.txt, 73]                             cen-&#39; ualibus el vna |  thaberna   | minore Septem marcas gros- sorum                  
+##    [36.txt, 457]      Lucow duas araturas septimumdimidium laneos |  Tabernas   | ABULAE TERRAE MORAVIAE. duas                      
+##   [360.txt, 826]                       duos medios laneos el vnam |  thabernam  | , Septem curliculas, artalia                      
+##   [365.txt, 271]                     Ralay Ilem vnum Balneum duas |  thabernas  | vnam cum agris aliam cum                          
+##   [365.txt, 514]                  laneis tribus curticulis et vna |  thaberna   | , et quid- quid ad                                
+##   [366.txt, 840]                     cum Jure emphiteo- lico duas |  tabernas   | , quas homines sub censu                          
+##   [366.txt, 871]                 pertinencijs ad dictos laneos ad |  thabernas  | seu ad eadem bona ab                              
+##   [368.txt, 759]            Wodieradek dimidium quintum laneum et |  thabernam  | , Item in Nyerow dimidium                         
+##   [369.txt, 295]             Kotoged tercium dimidium laneum vnam |  thabernam  | et ires curticulas cum prais                      
+##   [370.txt, 555]                              Msi orien bro ma et |   taberna   | ac vniuersis pertinencijs Curie eiusdem           
+##    [371.txt, 48]                   el dimidium septimum ortos XIV |  tabernas   | Curiam ibidem cum Robots,                         
+##   [371.txt, 355]                   duabus gasis sine agris tribus |  tabernis   | et eius pertinencijs vniuersis decem              
+##   [372.txt, 253]                         vnum quartale ac ad vnam |  tabernam   | eius omni- bus pertinencijs vniuersis             
+##   [375.txt, 802]                      gra in duabus Curticulis in |  thaberna   | etin orto ibidem et in                            
+##    [377.txt, 82]                 heredibus quatuor laneos et vnam |  thabernam  | in Poczeniez cum vniuersis pertinencijs           
+##   [378.txt, 720]                   agros tenentes vnum ortum duas |  tabernas   | Braxatiles et duas non braxatiles                 
+##    [379.txt, 34]                         siluis et in dimi tercia |  thaberna   | et in quarta parte molendini                      
+##   [379.txt, 335]                        dcum no dimidio laneo vna |  thaberna   | et oco curticulis hominibus censualibus           
+##     [380.txt, 7]                          . 336 septimo laneis in |  thaberna   | in vno subside in Nonaginta                       
+##   [381.txt, 594]                        , cum Molendino et duabus |  tabernis   | libere Draxantibus cum siluis lucis               
+##     [384.txt, 4]                                        1437. 380 |   taberna   | subside et duobus ortis ac                        
+##   [385.txt, 642]                              altero MU MMEL A in |  thaberna   | i in duobus orlis et                              
+##   [387.txt, 540]                   duobus laneis preter censum de |   taberna   | , et quatuor ortos ibi-                           
+##   [389.txt, 459]                        Buch- lowiez et in duabus |  tabernis   | et in subsidibus ad eandem                        
+##    [39.txt, 615]                        in medium laneum in agris |   taberne   | , duodecim grossos censuales,                     
+##    [39.txt, 624]                          censuales, lem in eadem |   taberna   | . quintummedium grossum Censuantem,               
+##   [390.txt, 712]                 quintam marcas quatuor laneis in |   taberna   | braxatili in hominibus cen- sualibus              
+##   [392.txt, 192]           Orzechowe septem subsides censuales et |  tabernam   | non braxatilem inter illos sub-                   
+##   [394.txt, 444]                    Curia cum duobus laneis media |   taberna   | Molendino cum aquis et littoribus                 
+##   [394.txt, 672]                     Bochorz in quatuor labels et |   taberna   | et duobus subsidibus, i                           
+##   [394.txt, 837]                     et quinque ortu- lanis media |   taberna   | in hijs omnibus et singulis                       
+##    [395.txt, 87]                          vno quar- sident, media |   taberna   | medio laneo et Jure et                            
+##   [396.txt, 169]              minori licet Curiam allodialem duas |  Tabernas   | braxatiles Tres venil et vnum                     
+##   [397.txt, 482]                 villam Chilicze cum ambabus cutn |   taberna   | braxatili agris cultis et incultis                
+##    [398.txt, 45]                  in villa Wodyerad Septem laneos |  Tabernam   | et curticulam Benessio de Bozkowiez               
+##    [398.txt, 82]                  Wodyerad super septem laneis in |   taberna   | et in cur- is Tn                                  
+##   [398.txt, 677]                   fertones cum duobus grossis In |   taberna   | WMiczonis octo grossos cum medio                  
+##   [398.txt, 685]                            grossos cum medio, In |   taberna   | Johannis carnificis oclo grossos eum              
+##   [398.txt, 694]                            grossos eum medio, In |   taberna   | Kunssonis oclo grossos cum melio                  
+##   [398.txt, 701]                        oclo grossos cum melio In |   taberna   | Mathissonis nouem grossos cum,                    
+##   [398.txt, 709]                      grossos cum, In Rozprchonis |   taberna   | nouem cum medio et in                             
+##    [399.txt, 68]               Brzezolup Dimidium Sari laseaé res |  tabernas   | censuales, quas proprias habent                   
+##    [399.txt, 82]                        purkrechty, et alias duas |  tabernas   | , [ uas homines agros                             
+##   [399.txt, 253]                         dimidiam sep- man&#39; obro- |   taberna   | im hominibus censualibus et non                   
+##   [400.txt, 362]               Oswyetiman in nouem laneis quinque |  tabernis   | et quinque curticulis et molendino                
+##    [401.txt, 82]                      in dimidio tercio laneis et |   taberna   | et quinque ortis ibidem in                        
+##    [401.txt, 96]             in dictis hominibus huiusmodi laneos |  tabernam   | et ortos tenentibus presen- libus                 
+##    [403.txt, 59]                          laneos in Pyenczin, cum | tabernario  | Jure dimidia altera curticula hominibus           
+##   [403.txt, 880]                     insi Oppatówisz in Smolna et |   taberna   | in Lhota ac super tercia                          
+##   [404.txt, 358]           vniuersis pertinencijs N dictos laneos |  Taberriam  | et Subsidem. TABULAE TERRAE                       
+##   [405.txt, 645]                       ilios duos lancus censu in |   taberna   | excluso et super quatuor ortos                    
+##    [41.txt, 219]                           laneis, Curiam cum.a à |  tabernam   | Balneum piscinam silvas Prata cum                 
+##   [410.txt, 271] pertinentibus pratis siluis communitatibus aquis |   taberna   | milenio. et bnmer homines                         
+##   [410.txt, 694]    censuantibus liberis et possessionatis laneis |  tabernis   | ac super illa sexagena grossorum                  
+##   [411.txt, 534]                   grossos census annui in laneis |  tabernis   | ortis computatis alias shadany,                   
+##    [42.txt, 280]                           Curiam Cum vna suales. |  Tabernam   | quatuor Curtius Rubetos priui er                  
+##   [421.txt, 375]                         in duobus laneis, duabus |  tabernis   | et nouem curticulis ac hominibus                  
+##   [421.txt, 400]                tinencijs ad dictam Curiam laneos |  tabernas   | et curticulas ab antiquo spectantibus             
+##   [432.txt, 761]                      alias hammer in Oskawia cum |  thaberna   | in Stanézin et cum montibus                       
+##    [433.txt, 51]                     laneos et vnum quartale duas |  tabernas   | Balneum quatuor subsides quatuor ortos            
+##   [434.txt, 204]                         et vnum quartale et tres |  tabernas   | braxatiles pratum in Strabyssow et                
+##    [439.txt, 69]                       ad dictos agros seu laneos |  tabernam   | subsidem et me- dium Molendini                    
+##    [44.txt, 381]              duas curticu- peu Molendinum mediam |  Tabernam   | medium i et medietatem.                           
+##    [44.txt, 412]                   Herollycz Curiam Molen- dinum. |  Tabernam   | tres curticulas pratum cum vniuersis              
+##    [44.txt, 524]                       Bedrzch de&quot; icouiez Curiam |  Tabernam   | me- dium xoliudin vnam eurticulam                 
+##   [440.txt, 824]                   et non censuantibus cum duabus |  thabernis  | aquis flu et non fluidis                          
+##   [447.txt, 401]                   quod super Curia in Nielkowicz |   Taberna   | et vna curti- cula consistit                      
+##   [447.txt, 470]                            , quam praytam d vnam |  tabernam   | tenent, Molendinum et duas                        
+##   [447.txt, 487]                     Jurispatronatus et dim agri, |  Tabernam   | Ortum et tres Curticulas et                       
+##   [448.txt, 290]             eius heredibus Curiam Zarusskach cum |   Taberna   | Braxatili vnum laneum Sex?                        
+##   [448.txt, 827]       et incultis hominibus censuantibus antibus |   Taberna   | Braxatili censibus solibus vilae robotlis         
+##   [449.txt, 183]         Rubetis Censibus redii tibus prouentibus |   Taberna   | Braxatili lluminibus duabus piscinis,             
+##    [45.txt, 643]          terciam partem Molendini terciam partem |   taberne   | cum omnibus ad ipsam Curiam                       
+##   [450.txt, 188]                     vocatur Ostru- owek, deserta |   Taberna   | Bri et Bernali et omnibus                         
+##   [451.txt, 197]                        agrorum, Ortos et Quatuor |  Tabernas   | Braxatiles duo Molendina de quibus                
+##   [451.txt, 207]               quibus Septem laneis praitis Ortis |  Tabernis   | et Mo- annui, cum                                 
+##   [451.txt, 335]          ortis eciam censuantibus siluis Rubetis |   Taberna   | agris cullis et incultis pascuis                  
+##   [451.txt, 774]                dictam Curiam spectantibus el vna |   Taberna   | penes Curiam iacente agris cultis                 
+##   [452.txt, 830]                     vocatur Ostruwek, et deserta |   taberna   | iran Bra pertinencij agii et                      
+##    [46.txt, 364]    Nyelkowicz sextummedium laneos duas curüeulas |  tabernam   | cum ipsius vniuersis perlinen- eijs               
+##    [46.txt, 809]                   villa Charwat duos laneos vnam |  tabernam   | duas curticulas vno agro hereditario              
+##    [47.txt, 668]                      Curiam iu Pornicz II laneos |  tabernam   | curticulam lendinis et in villa                   
+##    [48.txt, 164]                    heredis in Dr- holusch Curiam |  tabernam   | ledio laneo in Mi- lenow                          
+##     [49.txt, 38]                         . Curti- culis vno laneo |   Taberna   | cum ipsorum bonorum vniuersis pertinencijs        
+##    [53.txt, 115]        suis heredibus Terciumdimidium laneos cum |   taberna   | in Rosczyn vendidit hereditarie possidendos       
+##    [53.txt, 417]              Emphylico duas curticulas et mediam |  tabernam   | cum agris siluis Juribus dominijs                 
+##    [54.txt, 813]                        . Sep laneos cum quartali |  tabernam   | ortum cum siluis Ju- ribus                        
+##    [55.txt, 303]                 heredibus vnam Curiam cum Balneo |  tabernam   | medium laneum cum orto Rubeli                     
+##    [55.txt, 730]            Quinquaginta marcis cum Curia Rubetis |   Taberna   | et alia omnia et singula                          
+##    [56.txt, 701]                        ortos et XX grossos super |   taberna   | , et III grossos super                            
+##    [56.txt, 780]                   octo laneos vnum quartale vnam |  tabernam   | in Tuczyn ecclesie Olomu- ensi                    
+##    [59.txt, 451]                   , terciumdimidium laneum, vnam |  tabernam   | cum Molendino, balneum,                           
+##    [63.txt, 372]               Curium arature Il laneos Censuales |  tabernam   | cum Rubetis et ceteris bonis                      
+##    [64.txt, 573]                     Buk VIII laneos III subsides |  tabernam   | Jure hereditario possidendos, quod                
+##    [64.txt, 599]                          rzibislao dicto illa H: |   taberna   | et in a duos láneos                               
+##     [65.txt, 55]            Wissowicz XVIII laneos cum subsidibus |  tabernis   | Jurepatronatus vniuersis perünencijs pleno dominio
+##    [65.txt, 223]                villa Dobromilicz VID laneos vnam |  tabernam   | III subsides cum pleno dominio                    
+##    [65.txt, 380]                alterummedium la-&amp; neos censuales |  tabernam   | et subsidem in XXV mar-                           
+##    [67.txt, 322]                  vna virga medium Judicium media |   Taberna   | Silua dicta Sezar cum ommibus                     
+##     [69.txt, 92]               laneos soluentes II curüculas duas |  tabernas   | vnum molen- dinum cum pleno                       
+##    [69.txt, 666]                  VIII laneos III subsides mediam |  tabernam   | pleno do- minio et omni                           
+##      [7.txt, 63]                lendina quatuor Ortos duas medias |  tabernas   | , Item XX laneos cum                              
+##     [7.txt, 335]              minio eum fluminibus pratis rubelis |  Tabernam   | maiorem vnde idem Fridricus diuisit               
+##    [70.txt, 104]                arature IHIT laeos minus quartali |  tabernam   | duas partes Balnei cum omni                       
+##    [74.txt, 708]                 quartalia medium laneum me- diam |  tabernam   | eo Jure quo tenuit nichil                         
+##    [74.txt, 798]                   laneum ) medium balneum mediam |  tabernam   | eo Jure quo tenuit niehil                         
+##    [75.txt, 548]                        censuales, Molendinum, II |  tabernas   | , mediam piscinam cum rubelis                     
+##    [76.txt, 116]                         super Cu- ria aralure et |   taberna   | libere assignauil. ) 266                          
+##    [77.txt, 115]                 [ laneos censuales duos subsides |  tabernam   | eo Jure quo tenuit nichil                         
+##    [79.txt, 236]                        Neczsicz super pius NE et |   taberna   | racione. veri dotaici eidem                       
+##     [83.txt, 56]                 la- meos censuales duos subsides |  Tabernam   | cum om- nibus suis pertinencijs                   
+##    [83.txt, 279]                 villa Musch- nicz Curiam arature |  tabernam   | rubetum pratum ci pertineneijs vniuersis          
+##    [83.txt, 289]                  vniuersis que ante tenuerunt et |   Tabere    | vebantur nichil penitus eis Juris                 
+##    [84.txt, 181]                 cum omnibus suis perlineneijs in |  tabernis   | Jus do- talieij iud habui                         
+##    [85.txt, 454]                        annui census in laneis et |  tabernis   | dedit libere et assignauit Jure                   
+##    [85.txt, 649]                  uil Ogpstoviox VIII subsides et |  tabernam   | et tre liberum de aratura                         
+##    [90.txt, 385]              vno quartali quatuor curticulas III |  tabernas   | ( et mediam partem ville                          
+##    [98.txt, 883]                      talia tres subsides el vnam |  tabernam   | Curiam arature eum vniuersis suis</code></pre>
+<pre class="r"><code>kwic(desky2_tokens, &quot;humul*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(desky2_tokens, &quot;slad*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 3 matches.                                                                            
+##  [391.txt, 460] einer viel Boskoieies.&quot; | sLadislw  | 3* ui incolis censibus
+##  [427.txt, 911] Hand. angebrachten. pus | sLadislaw | *, 4. ^               
+##  [439.txt, 701]         Hand der. None: | sLadislne | *, oskore ^ os</code></pre>
+</div>
+<div id="decem-registra-censuum" class="section level2">
+<h2>Decem registra censuum</h2>
+<pre class="r"><code>desky3_files &lt;- list.files(&quot;texts/154/&quot;, &quot;*.txt&quot;, full.names = TRUE)
+desky3 &lt;- readtext(desky3_files, docvarsfrom = &quot;filenames&quot;)
+desky3_corpus &lt;- corpus(desky3)
+desky3_tokens &lt;- tokens(desky3_corpus)
+
+kwic(desky3_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 259 matches.                                                                                                                  
+##  [107.txt, 137]              3 quartalia deberet habere et |   tabernam    | liberam, et servire debet            
+##  [107.txt, 281]                   vyeko dicitur. Item tres |    taberne    | , ex quibus unam tenet               
+##   [108.txt, 83]                  .. tantum debent censuare |    taberne    | sicut de censu. Summa                
+##  [108.txt, 320]                  . Item Mathias tenet unam |   tabernam    | , de qua in antiquo                  
+##  [108.txt, 434]                       . sione silve et cum |    taberna    | . Pulli: honorificencie per          
+##  [110.txt, 132]                     ducere de pratis. Item |    taberna    | annuatim 32 gr. ltem                 
+##  [110.txt, 203]                       cocus 1 laneum. Item |    taberna    | solvit 16 gr. Item                   
+##  [110.txt, 286]                          gr., fumalium cum |    taberna    | 29 gr. Myrzyewicz.                   
+##  [110.txt, 340]                     annuatim. Item est una |    taberna    | provisionarii. Item metunt 100       
+##  [112.txt, 253]                             , gr. Item due |    taberne    | solvunt cirea carnispri- vium per    
+##  [113.txt, 128]                   modo succiduntur. Item 8 |    taberne    | per 16 gr. circa                     
+##  [114.txt, 195]                   excluso judice. Item est |    taberna    | judicis, que nichil solvit           
+##  [116.txt, 333]                             24 gr. Item 14 |    taberne    | incluso judice, quelibet solvit      
+##   [117.txt, 85]             delencionales. Item que- libet |    taberna    | solvit ad voluntatem domini bernam   
+##  [117.txt, 226]                           10 gr. ltem sunt |    taberne    | 83 et quelibet solvit per            
+##  [117.txt, 251]                      Galli. Et de qualibet |   thaberna    | debent dare duos laboratores super   
+##  [117.txt, 388]                   marcas graves. ltem sunt |    taberne    | 82 [ sic ],                          
+##   [118.txt, 26]           ille decinus septimus grossus de |    taberna    | est judicis. Item hoc                
+##   [118.txt, 34]                   . Item hoc anno quelibet |    taberna    | solvit de berna 32 gr                
+##   [118.txt, 80]              avenam. Item quelibet simplex |    taberna    | dat duos messores et alia            
+##   [118.txt, 87]                 duos messores et alia vero |    taberna    | , que habet duas areas               
+##   [119.txt, 42]                   ibidem habet 1 laneum et |   tabernam    | liberam. Item quilibet laneus        
+##  [119.txt, 364]                   strichones. Item est una |    taberna    | pro judice. Item 17                  
+##  [123.txt, 261]                   jugera. Item de qualibet |   thaberna    | solvuntur 16 gr. et                  
+##  [123.txt, 293]                    habet 2 laneos liberos, |   thabernam   | et de vendicione domorum,            
+##  [124.txt, 121]                    tolit. Item judex habet |   tabernam    | liberam pro servicio. Chlum          
+##  [125.txt, 143]                               6 gr. Item 6 |    taberne    | , quelibet solvit 12 gr              
+##   [127.txt, 13]              provisionem. Item invenimus 7 |   thabernas   | , que possunt augeri et              
+##   [129.txt, 90]                        et servit. Item una |   thaberna    | solvit annuatim 19 gr.               
+##  [133.txt, 229]             Item sunt subsides quinque cum |   thaberna    | , solvunt annuatim quilibet 4        
+##  [133.txt, 238]                      quilibet 4 gr. preter |   thabernam   | , que solvit annuatim 20             
+##  [133.txt, 258]               subsides et unus annexus est |   thaberne    | . Item berna, quilibet               
+##  [135.txt, 222]                        18 gr. Item quinque |   thabernas   | invenimus pro tempore et quelibet    
+##  [138.txt, 207]                            8 gr. Item sunt |   thaberne    | 50 pro tempore, quelibet             
+##  [138.txt, 223]                 de quibus judex tenet unam |   thabernam   | liberam. Item est unum               
+##  [140.txt, 103]                ltem invenimus ad presens 5 |   thabernas   | , quarum quelibet solvit annuatim    
+##   [146.txt, 54]                    Item ad presens est una |   thaberna    | solvens annuatim [ sic ]             
+##  [146.txt, 376]                         dies. Item est una |   thaberna    | solvens annuatim 12 gr.              
+##  [147.txt, 279]                           gr. Item sunt 10 |   thaberne    | , quarum quelibet solvit annuatim    
+##   [15.txt, 138]               . Item quotquot erunt ibidem |    taberne    | , unaqueque solvit dimidium fertonem 
+##  [154.txt, 335]               . Item invenimus pro tempore |   thabernas   | , que possunt augeri vel             
+##  [158.txt, 170]                            4 gr. Item sunt |   thaberne    | pro nunc...                          
+##  [159.txt, 193]                         . Item est ibi una |   thaberna    | , quam judex habet pro               
+##   [16.txt, 187]               . Item quotquot erunt ibidem |    taberne    | , unaqueque solvit dimidium fertonem 
+##  [160.txt, 206]                           hal. Item sunt 6 |   thaberne    | , que possunt augeri vel             
+##   [162.txt, 68]                        hal. Item sunt tres |   thaberne    | solventes annuatim quelibet 10 gr    
+##   [163.txt, 76]                           gr. Item est una |   thaberna    | libera, quam judex habet             
+##   [17.txt, 242]                 unus subses faber et habet |   tabernam    | , qui necessi- tatem ad              
+##   [17.txt, 254]                   tenetur fabricare; et si |    taberna    | non esset nec faber,                 
+##  [175.txt, 136]                   fumalibus 6 parvos. Item |    taberna    | solvit pro uno termino,              
+##   [180.txt, 28]                          2 pullos. Item de |   thaberna    | solvit Georgii 15 gr.                
+##  [188.txt, 340]                          in curia. Item de |   thaberna    | Georgii 60 gr. et                    
+##   [19.txt, 210]                        - Item est ibi unus |  tabernator   | , qui habet 3 jugera                 
+##   [19.txt, 227]                          14 grossos, et de |    taberna    | solvit, sicut potest invenire        
+##   [190.txt, 89]                         gr, et de qualibet |   thaberna    | solvunt Georgii 6 gr.                
+##  [190.txt, 105]                     ; et si fuerint plures |    taberne    | , quelibet earum tantum solvit       
+##  [190.txt, 122]                   minus solvunt, quia quot |   thaberne    | sunt, quelibet earum solvit          
+##  [190.txt, 236]                     Galli tantum. Summa de |   thabernis   | isto anno existentibus Georgii 108   
+##    [20.txt, 32]                        . Item est ibi unus |  tabernator   | habens 3 jugera, de                  
+##    [20.txt, 45]                               14 gr. et de |    taberna    | , sicut potest graciam prepositi     
+##  [204.txt, 333]                   se colligere, tunc omnes |    taberne    | tenentur dare per 33 gr              
+##   [205.txt, 20]     sunt preter braseatoria pertinencia ad |   tabernam    | , tenentur dare per 33               
+##   [205.txt, 32]                . Item quelibet domus extra |   tabernam    | integra tenetur dare 8 gr            
+##  [226.txt, 126]                  expensis. ltem idem tenet |   tabernam    | ad voluntatem domini abbatis,        
+##  [226.txt, 237]                    Item in eadem villa est |   thaberna    | judicis cum uno laneo,               
+##  [232.txt, 173]              . Villa Brzezany. Privilegium |   thaberne    | in Brze- zano. Villa                 
+##  [232.txt, 215]                        in Patek. Privileg. |   thaberne    | in Patek. Villa Radonyez             
+##  [234.txt, 303]                      . Item ibidem est una |   thaberna    | et solvit pro festo S                
+##   [235.txt, 64]                       . Willa Buczye. Ttem |  thabernator  | de area. Item Mikess                 
+##  [235.txt, 107]                       pastor de area. Item |  thabernator  | de tha- berna. Item                  
+##  [235.txt, 281]                      . Item ibidem est una |   thaberna    | et solvit pro festo S                
+##  [235.txt, 315]            quia deberet solvere velud alie |   thaberne    | vicine in bonis monasterii existentes
+##  [235.txt, 396]               Villa Thyssowka. Item Paulus |  thabernator  | ha- bet 1 quarlale et                
+##  [235.txt, 413]                        1 quart. Item Nikel | thabernatoris | ha- bet unum quartale.               
+##  [235.txt, 439]                             et 1 laz. Item |   thabernat   | . de thaberna. Item                  
+##  [235.txt, 442]                       . Item thabernat. de |   thaberna    | . Item pastor de bacculo             
+##  [237.txt, 274]                     . Item ibidem sunt due |   thaberne    | , una monasterii et alia             
+##  [237.txt, 396]                      . Item Dorostly. Item |  thabernator  | . ltem pastor. Item                  
+##  [241.txt, 432]                         , uno subside, una |   thaberna    | neenon robotis, pullis,              
+##  [243.txt, 492]                      . ltem ibidem est una |   thaberna    | et solvit annuatim l&#39;j,              
+##  [245.txt, 203]                           , lan. Item Mach |  thabernator  | habet laneos. Item Blasias           
+##  [248.txt, 253]              sicut superius est expressum, |   thabernam   | liberam cum venacionibus leporum et  
+##   [25.txt, 167]                           . Galli. Item de |    taberna    | 9 grossi solvuntur. Item             
+##  [251.txt, 253]                      . Item ibidem est una |   thaberna    | et solvit pro festo S                
+##  [251.txt, 412]                        1 hered. Jtem Witek |    thaber     | . hab. 1 her                         
+##   [253.txt, 17]                      . Item ibidem est una |   thaberna    | jure emphiotetico locata, et         
+##  [256.txt, 229]                      . Item ibidem est una |   thaberna    | jure emphiotico locata, et           
+##  [257.txt, 126]        . Item privilegium super emphiteosi |   thaberne    | ibidem in Brzezano, prout            
+##  [257.txt, 197]             ] ficienti intra nos prehabita |   thabernam   | nostram et monasterii nostri predicti
+##  [257.txt, 263]              et competere debuit ad dietam |   thabernam   | , dis- creto viro Walthero           
+##  [257.txt, 324]         pro tempore fuerit possessor dicte |   thaberne    | , idem nobis et monasterio           
+##  [258.txt, 208]                      . Item ibidem est una |   thaberna    | et solvit pro festo S                
+##  [258.txt, 233]                 . Solvit eciam de predicta |   thaberna    | bernam generalem, et est             
+##  [264.txt, 113]                      . ltem ibidem est una |   thaberna    | , et pro festo S                     
+##  [264.txt, 359]                          et 7 jugera. Item |   thaberna    | . Item judex habet 1                 
+##   [267.txt, 24]                            . 1 quart. Item |   thaberna    | . Privilegium dicte ville Patek      
+##  [271.txt, 109]        Galli. Privilegium super emphiteosi |   thaberne    | in Patek sequitur. In                
+##  [271.txt, 356]           expressa habeat et habere possit |   thaberna    | [ m ], in                            
+##  [271.txt, 368]     juxta morem ac consuetodinem vicinarum |  thabernarum  | , videlicet in Kosseziez,            
+##    [272.txt, 6]                  259 mensuram, quam habent |   thaberne    | prefate, nec licebit ei              
+##   [272.txt, 39]                 ac alia victualia in dicta |   thaberna    | vendere poterit suam ad utilitatem   
+##   [272.txt, 65]                 quicumque nocivi, in dicta |   thaberna    | non exerceantur, sed sint            
+##  [272.txt, 113]               judicia habeantur et sint in |   thaberna    | premissa, excepta tamen ea           
+##  [272.txt, 173]  willis nostris ibidem adiacentibus nullam |   thabernam   | emphiteotico jure exponere, locare   
+##  [272.txt, 191] emerserit pro mionasterii nostri utilitate |   tabernam    | locare et vendere, possumus          
+##  [272.txt, 221]                    et sui heredes de dicta |    taberna    | singulis annis unam sexag.           
+##  [272.txt, 314]              Swacho aut sui heredes dictam |   thabernam   | vendere vellent, quod non            
+##  [272.txt, 379]                     . predictum est, ipsam |   thabernam   | cum dictis strichonibus agrorum et   
+##  [272.txt, 424]                   vel sui heredes de dicta |   thaberna    | !/, sexag.                           
+##   [273.txt, 51]                milia virginum. Item ibidem |  thabernator  | habet secundum privilegium super una 
+##  [292.txt, 395]                      . Item ibidem est una |   thaberna    | et solvit pro festo S                
+##   [293.txt, 53]                 1 hereditatem. Item Wanyek | thabernatoris | habet 1 hereditatem, de              
+##  [293.txt, 125]               , hereditatem. Item Johannes |  thabernator  | habet 1 hereditatem. Item            
+##   [297.txt, 82]                      . Item ibidem est una |   thaberna    | et solvunt de ipsa pro               
+##  [297.txt, 272]                        habet 1 hered. Item |  thabernator  | 15 gr. Item Thomas                   
+##   [318.txt, 27]                     Galli 70 sexag. demtis |   tabernis    | . Item trzne recipitur omni          
+##   [322.txt, 75]                     Lawiez sunt 4 arature, |    taberna    | una, piscatores 24,                  
+##  [322.txt, 139]                                , lan., una |    taberna    | , duo molendina, de                  
+##  [322.txt, 243]                                  !/ j, una |    taberna    | , a pis- Catoricus ce                
+##   [327.txt, 26]                          8 gr. Witek domum |   tabernam    | dedit 24 gr. Nicolaus                
+##   [327.txt, 44]                       , gr. Jacussek domum |   tabernam    | dedit 24 gr. Idem                    
+##   [327.txt, 69]                                    &#39;/, gr. |   tabernam    | dedit 24 gr. Swoyssek                
+##   [327.txt, 76]                      24 gr. Swoyssek domum |   tabernam    | dedit 23 gr. Pisnerz                 
+##   [327.txt, 83]                       23 gr. Pisnerz domum |   tabernam    | , pauper, dedit 15                   
+##  [327.txt, 112]                  . Idem braseatorium. Idem |   tabernam    | judicis. Waczlab sartor domum        
+##  [327.txt, 118]              judicis. Waczlab sartor domum |   tabernam    | dedit 26 gr. inclusa                 
+##  [327.txt, 145]                                /, gr. Idem |   tabernam    | dedit 24 gr. Woysla                  
+##  [327.txt, 151]                        dedit 24 gr. Woysla |   tabernam    | dedit 24 gr. Hrzenyk                 
+##  [327.txt, 158]                       24 gr. Hrzenyk domum |   tabernam    | , pauper et cecus.                   
+##  [327.txt, 174]                           1 gr. Idem domum |   tabernam    | dedit 24 gr. Peter                   
+##  [327.txt, 180]                         dedit 24 gr. Peter |   tabernam    | dedit 24 gr. Vrsa                    
+##  [327.txt, 198]                3 jugeribus. Pabel pannifex |   tabernam    | dedit 24 gr. Schilhun                
+##  [327.txt, 204]                      dedit 24 gr. Schilhun |   tabernam    | dedit 129 gr. parsi                  
+##  [327.txt, 214]                        parsi 12 gr. Lippek |   tabernam    | , venator, dedit 12                  
+##  [327.txt, 240]              burgravii. Kraczata vel Thoma |   tabernam    | dedit 24 gr. Hodass                  
+##  [327.txt, 262]                         3 gr. Beness domum |   tabernam    | , cliens pauper et antiquus          
+##  [327.txt, 276]               propter deum. Pessek rotifex |   tabernam    | dedit 24 gr. Idem                    
+##  [327.txt, 290]                        graciam 4 gr. Benek |   tabernam    | dedit 24 gr. Zbrayn                  
+##  [327.txt, 296]                        dedit 24 gr. Zbrayn |   tabernam    | dedit 20 gr. Pradacz                 
+##  [327.txt, 312]                         dedit 27 gr. Drzka |   tabernam    | tenetur 13 gr. Hufnagel              
+##  [327.txt, 319]                      13 gr. Hufnagel faber |   tabernam    | dedit 27 gr. inclusa                 
+##  [327.txt, 338]                          dedit 12 gr. Idem |   tabernam    | dedit 24 gr.                         
+##    [328.txt, 2]                                      Wanek |   tabernam    | dedit 24 gr. Woysla                  
+##  [328.txt, 154]                      4 gr. Jessek carnifex |   tabernam    | dedit 24 gr. Habel                   
+##  [328.txt, 161]                       24 gr. Habel rotifex |   tabernam    | dedit 28 gr. inclusa                 
+##  [328.txt, 195]                          dedit 45 gr. Idem |   tabernam    | dedit 24 gr. Dywissius               
+##  [328.txt, 245]                          ldem 1 subs. ldem |   tabernam    | dedit 24 gr. Mika                    
+##  [328.txt, 263]                           dedit 9 gr. ldem |   tabernam    | dedit 20 gr.,                        
+##  [328.txt, 282]                         4 gr. Martin domum |   tabernam    | , rector scolarum, pauper            
+##  [328.txt, 300]                                /, gr. ldem |   tabernam    | dedit 24 gr. Jurzik                  
+##  [328.txt, 306]                        dedit 24 gr. Jurzik |   tabernam    | dedit 24 gr. Wech                    
+##  [328.txt, 323]                          dedit 31 gr. Idem |   tabernam    | dedit 22 gr. |                       
+##  [334.txt, 219]                              , subs.. Idem |   tabernam    | | Qedit 28 gr.                       
+##  [348.txt, 747]                              4 gr. - Habel |   tabernam    | ded. 24 gr,                          
+##  [348.txt, 759]                             8 gr. - Czrnik |   tabernam    | ded. 24 gr.                          
+##  [351.txt, 384]                       . - Primsters domum. |    Taberne    | . Pabel taber. ded                   
+##  [351.txt, 387]                      domum. Taberne. Pabel |     taber     | . ded. 16 gr                         
+##  [351.txt, 396]                            16 gr. - Niklik |     taber     | . ded. 14 gr                         
+##  [351.txt, 409]                             2 gr. - Laczny |     taber     | . ded. 16 gr                         
+##  [351.txt, 418]                            16 gr. - Kaczka |     taber     | . - Marussa taber.                   
+##  [351.txt, 422]                    Kaczka taber. - Marussa |     taber     | . - Enderlik taber.                  
+##  [351.txt, 426]                  Marussa taber. - Enderlik |     taber     | . Sutores: Pesslik.                  
+##   [355.txt, 95]                                 27 gr., de |    taberna    | 17 gr. Kyptow 1                      
+##  [355.txt, 249]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##   [356.txt, 29]                              48 gr. - Idem |   tabernam    | , notarius domini. -                 
+##   [356.txt, 45]                              , [ et ] idem |   tabernam    | ded. 32 gr.                          
+##   [356.txt, 68]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 126]                          domum [ et | idem |   tabernam    | ded. 31 gr.                          
+##  [356.txt, 139]                          domum [ et | idem |   tabernam    | ded. 16 gr.                          
+##  [356.txt, 169]                               4 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 188]                              24 gr. - Idem |   tabernam    | , orphani ded. 26                    
+##  [356.txt, 221]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 235]                            mum [ et ] idem |   tabernam    | ded. 30 gr.                          
+##  [356.txt, 252]                          domum [ et ] idem |   tabernam    | ded. 329 gr.                         
+##  [356.txt, 311]                              16 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 324]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 337]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 351]                            mum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 364]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 384]                              16 gr. - ldem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 397]                          domum [ et ] idem |   tabernam    | ded. 28 gr.                          
+##  [356.txt, 421]                         - Voyt domum; idem |   tabernam    | , ad pronunciacionem domini Nicolai  
+##  [356.txt, 437]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 450]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 473]                               6 gr. - Idem |   tabernam    | , judex novus. Marsik                
+##  [356.txt, 487]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 500]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [356.txt, 515]                              . [ et ] idem |   tabernam    | , provisionarius. - Stephanus        
+##  [356.txt, 565]                 - Merklinus institor; idem |   tabernam    | et braseatorium ded. 32              
+##   [357.txt, 64]                          domum [ et ] idem |   tabernam    | ded. 28 gr.                          
+##   [357.txt, 82]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [357.txt, 293]                              32 gr. - Idem |   tabernam    | ded. 28 gr.                          
+##  [357.txt, 316]                          domum [ et ] idem |   tabernam    | ded. 30 gr.                          
+##  [357.txt, 387]                               4 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [357.txt, 405]                              40 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [357.txt, 423]                              32 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [357.txt, 671]                              24 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##  [357.txt, 691]                              16 gr. - Idem |   tabernam    | ded. 32 gr.                          
+##   [358.txt, 87]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [358.txt, 111]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [358.txt, 143]                               4 gr. - Idem |   tabernam    | [ et ] idem braseato-                
+##  [358.txt, 163]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [358.txt, 174]                    - Drzisha domum et idem |   tabernam    | pauper et novus tabernator,          
+##  [358.txt, 178]              idem tabernam pauper et novus |  tabernator   | , domum convenit. -                  
+##  [358.txt, 204]                          domum [ et ] idem |   tabernam    | ded. 32 gr.                          
+##  [358.txt, 238]                              . [ et ] idem |   tabernam    | , semel braxavit, tenetur            
+##  [358.txt, 635]                     In margine: tenetur de |    taberna    | 16 gr.? Nawra                        
+##  [361.txt, 715]                               ! ) In marg. |    taberna    | .                                    
+##  [369.txt, 232]                                 ded. 3 gr. |    Taberne    | : Stryczek 1 tab.                    
+##  [369.txt, 256]                               16 gr. - May |   tabernam    | . - Josta tabern.                    
+##  [369.txt, 260]                      May tabernam. - Josta |    tabern     | . ded. 16 gr                         
+##  [369.txt, 270]                            gr. - Sy- botka |    tabern     | . ded. 16 gr                         
+##  [369.txt, 279]                           16 gr. - Przibek |    tabern     | . ded. 15 gr                         
+##  [369.txt, 291]                          - Maczek, rector, |    tabern     | . ded. 8 gr                          
+##  [369.txt, 305]                              8 gr. - Chwal |    tabern     | . ded. 11 gr                         
+##  [369.txt, 314]                             11 gr. - Komar |    tabern     | . ded. 15 gr                         
+##  [369.txt, 329]                               !/ lan. idem |   tabernam    | . - Vtrzek&#39;/                         
+##  [369.txt, 339]                               /, lan. idem |   tabernam    | . - Thoma sartor tabernam            
+##  [369.txt, 344]                   tabernam. - Thoma sartor |   tabernam    | . - Hodisla tabernam.                
+##  [369.txt, 348]                 sartor tabernam. - Hodisla |   tabernam    | . - Srlyn faber tabernam             
+##  [369.txt, 353]                    tabernam. - Srlyn faber |   tabernam    | . - Dominus Petrus,                  
+##   [37.txt, 168]            Item quilibet laneus solvit pro |    taberna    | 1 gr. Item arat                      
+##   [38.txt, 336]               Item in Stoda Bohuslaw habet |   tabernam    | , Wit carnifex tabernam,             
+##   [38.txt, 340]               habet tabernam, Wit carnifex |   tabernam    | , Ondrzeg Dub tabernam,              
+##   [38.txt, 344]             carnifex tabernam, Ondrzeg Dub |   tabernam    | , Porzadek tabernam. Nota            
+##   [38.txt, 347]             Ondrzeg Dub tabernam, Porzadek |   tabernam    | . Nota, quod isti                    
+##   [38.txt, 354]                    Nota, quod isti quatuor |  tabernarii   | solvunt annuatim per 22 gr           
+##  [380.txt, 419]                            13 Er. - Stisla |    taberna    | . - Custos apum 1                    
+##  [386.txt, 161]                            4 gr. - Ondrzie |   tabernam    | ded. 10 gr.                          
+##  [393.txt, 410]                        Hostek judex 1 lan. |    Taberne    | . Nota, Dicti homines                
+##  [393.txt, 462]                      , 26 subsidibus et 14 |   tabernis    | deperiunt in berna 24 sexag          
+##  [395.txt, 236]                                1 lan. et 1 |   tabernam    | . Nota. Dicti homines                
+##  [395.txt, 280]           inclusis molendinis, subsidibus, |   tabernis    | et delencialibus pactando solverunt 8
+##    [398.txt, 9]                                /, subs. in |   tabernis    | . - Dreiling 1 subs                  
+##   [398.txt, 45]                               ! j subs. in |   tabernis    | . - Jaxo 1&#39;                          
+##   [399.txt, 62]                                 ded. 6 gr. |    Taberne    | . Kenkerlein ded. 31                 
+##  [401.txt, 167]                              12 gr. - Idem |   tabernam    | ded. 12 gr,                          
+##  [401.txt, 189]                               8 gr. - Idem |    taber-     | nam ded. 12 gr                       
+##  [404.txt, 221]                      rota deserta. - Manek |   tabernam    | . - Hostisla tabernam.               
+##  [404.txt, 225]                 Manek tabernam. - Hostisla |   tabernam    | . - Waezlab 3 quar                   
+##  [406.txt, 557]                                 ded. 3 gr. |    Taberne    | . Chul tabern. ded                   
+##  [406.txt, 560]                          gr. Taberne. Chul |    tabern     | . ded. 16 gr                         
+##  [406.txt, 569]                             16 gr. - Jacub |    tabern     | . ded. 15 gr                         
+##  [406.txt, 582]                              1 gr. - Fricz |    tabern     | . ded. 15 gr                         
+##  [406.txt, 591]                          15 gr. - Przibram |    tabern     | . - Mikes tabern.                    
+##  [406.txt, 595]                   Przibram tabern. - Mikes |    tabern     | . ded. 14 gr                         
+##  [406.txt, 609]                                 ... - Adam |    tabern     | . ded. 15 gr                         
+##  [406.txt, 618]                            15 gr. - Mathie |    tabern     | . a. festo Galli                     
+##  [410.txt, 327]                               . - Raden 1. |    Taberne    | . Makeluss, Laurencius Hacze         
+##   [411.txt, 92]        propter eorum paupertatem: inclusis |   tabernis    | et iugeribus ac subsidibus exclusis  
+##  [445.txt, 299]                  Judicia in villa Patek in |    taberna    | habeantur 259. PEERS ami             
+##  [446.txt, 377]           nobilibus et potentibus lanei et |   tabernae    | in villis mon. Strahowiensis         
+##  [447.txt, 404]                                , 338, 386. |    Taberna    | , tabernae 2, 3                      
+##  [447.txt, 406]                            , 386. Taberna, |   tabernae    | 2, 3, 7                              
+##    [46.txt, 57]                        Jakub gaz. - Kuness |    taberna    | gaz. - Gindrzich gaz                 
+##   [49.txt, 246]                               gr. de orto. |    Taberne    | quotquot sunt in arbitrio et         
+##   [51.txt, 412]                           S. Laurencii; et |    taberna    | solvit de quoque vase cere-          
+##   [54.txt, 458]                             Ondra 1 ter. - |    Taberna    | 35 gr. Dobrzan opidum                
+##    [84.txt, 27]                        nichil solvit. - De |   thaberna    | 29 gr. Summa pro</code></pre>
+<pre class="r"><code>kwic(desky3_tokens, &quot;humul*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 49 matches.                                                                                                             
+##  [104.txt, 110]           horreo ibidem constructo et orto |  humuli   | similiter ibi in- clusis discreto   
+##  [109.txt, 233]                   pullos, fenum colligere, |  humulum  | carpere, fumales per 6              
+##  [121.txt, 128]                 plus. Jtem subsides debent |  humulum  | carpere et rappam fodere et         
+##  [128.txt, 166]                de quolibet laneo unum diem |  humulum  | carpere. ltem ducunt quinque        
+##  [128.txt, 174]             ltem ducunt quinque fustes pro |  humulo   | . ltem venari tenentur ad           
+##  [129.txt, 216]                    laneo debent per 1 diem |  humulum  | carpere. Item venantur et           
+##  [130.txt, 131]                  de quolibet laneo una die |  humulum  | carpere et ad venacionem ad         
+##  [131.txt, 189]              Item tenentur rapam fodere et |  humulum  | carpere. F. 23b                     
+##  [131.txt, 343]              ltem tenentur fodere rapam et |  humulum  | carpere. Item tenentur venari       
+##  [134.txt, 241]             rastro laborare. Item tenentur |  humulum  | unum diem carpere et unum           
+##   [136.txt, 30]                  rapam ducere et unum diem |  humulum  | carpere. Item tenentur pro          
+##  [136.txt, 397]                   metere 2 dies et carpere |  humulum  | unum diem; pratum Witowycz          
+##   [164.txt, 56]                    ortus Mande. Item ortus |  humuli   | . Item ortus Sindelonis.            
+##   [169.txt, 37]                            et 10 gr. Ortus |  humuli   | . Item Neustup humulator solvit     
+##   [169.txt, 41]                 Ortus humuli. Item Neustup | humulator | solvit Margarethe 75 gr.            
+##   [169.txt, 56]           tenetur 2 septimanas laborare in |  humulo   | . Ortus Ssindelonis. Item           
+##   [17.txt, 147]                 unus ortus pro caulibus et | humuletum | , et ortulanus eorum habet          
+##   [17.txt, 162]                  quibus laborat in orto et | humuleto  | . - Item est ibi                    
+##  [190.txt, 137]                  Item judex solvit de orto |  humuli   | 6 gr. ltem quociens                 
+##  [190.txt, 170]                          , et idem de orto |  humuli   | Georgii 6 gr. et                    
+##  [228.txt, 272]                              6 gr. Item de | humuleto  | Georgii 8 gr. et                    
+##   [27.txt, 242]                        . Item est ibi unum | humuletum | , de quo est ad                     
+##  [283.txt, 319]                tribus arraturis bonis, uno | humuleto  | et 3 pratis et unum                 
+##   [287.txt, 43]                    ltem ibidem sunt silva, | humuletum | et unum pratum de pertinenciis      
+##  [306.txt, 183]                    debent per unum diem in |  humulo   | carpere, quando fuerint requisiti   
+##  [306.txt, 262]                     la- borat unum diem in |  humulo   | . Item Bielowa habet 1              
+##  [306.txt, 280]                       et laborat 1 diem in |  humulo   | . Item domus Thassonis habet        
+##  [306.txt, 373]                     , unum diem laborat in |  humulo   | . Item Wenczeslaus carpentator habet
+##  [306.txt, 409]                     , duos dies laborat in |  humulo   | .                                   
+##   [307.txt, 23]                     , duos dies laborat in |  humulo   | . Item Mauricius habet 1            
+##   [307.txt, 41]                     , laborat unum diem in |  humulo   | . Item Mirzyk habet 1               
+##   [307.txt, 59]                     , unum diem laborat in |  humulo   | . Item Cuchta habet 1               
+##   [307.txt, 77]                     , unum diem laborat in |  humulo   | . Item Kaezka habet 1               
+##   [307.txt, 95]                     , unum diem laborat in |  humulo   | . Item Jacobus faber habet          
+##  [307.txt, 112]                     , unum diem laborat in |  humulo   | . Item Andreas cancellarius habet   
+##  [307.txt, 174]                     , unum diem laborat in |  humulo   | . Item Woytiech habet 1             
+##  [307.txt, 192]                        , 1 diem laborat in |  humulo   | . Item Jacobus habet 1              
+##  [307.txt, 210]                     , unum diem laborat in |  humulo   | . Item Vrsus habet 1                
+##  [307.txt, 228]                     , unum diem laborat in |  humulo   | . Item Johannes habet 1             
+##  [307.txt, 246]                     , unum diem laborat in |  humulo   | . Item Garosius habet unam          
+##  [307.txt, 264]                     , unum diem laborat in |  humulo   | . Item Paulus habet 2               
+##  [307.txt, 281]                     , duos dies laborat in |  humulo   | . Item Thomas habet unam            
+##  [323.txt, 126]                      », unum Strichonem de |  humulo   | , 40 capecia metere,                
+##  [445.txt, 562]                         93. hospitale 104. | humuletum | , ortus humuli, humulus             
+##  [445.txt, 565]                      104. humuletum, ortus |  humuli   | , humulus 4, 14                     
+##  [445.txt, 567]                   humuletum, ortus humuli, |  humulus  | 4, 14, 51                           
+##    [95.txt, 52]             quod dicti fratres omnes ortos |  humuli   | debent tenere ad decem annos        
+##    [95.txt, 72] laborare sumptibus suis usque colleccionem |  humuli   | , et quando colligetur,             
+##    [95.txt, 85]                recipere terciam [ partem ] |  humuli   | et pro dominis 2 ^</code></pre>
+<pre class="r"><code>kwic(desky3_tokens, &quot;slad*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                    
+##  [65.txt, 2] 52 | Sladovnicé | 3 étvrti 1 kopu minus</code></pre>
+</div>
 
 
 

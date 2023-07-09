@@ -5,8 +5,19 @@ library(tesseract)
 
 files_301 <- list.files("output/301/", pattern = "*.jpg", full.names = TRUE)
 files_171 <- list.files("output/171/", pattern = "*.jpg", full.names = TRUE)
+files_154 <- list.files("output/154/", pattern = "*.jpg", full.names = TRUE)
 
 lat <- tesseract("lat", options = list("tessedit_pageseg_mode"=1))
+
+for(i in seq_along(files_154)){
+    cat(i, "\n")
+    try({
+        page_id <- stringr::str_extract(files_154[i], "[0-9]+.jpg") %>% 
+            gsub(".jpg", "", .)
+        text <- ocr(files_154[i], engine = lat)    
+        writeLines(text, glue::glue("texts/154/{page_id}.txt"))  
+    })
+}
 
 for(i in seq_along(files_301)){
     cat(i, "\n")

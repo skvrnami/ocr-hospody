@@ -11,25 +11,43 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(quanteda)
 library(readtext)
-```
 
+options(width = 300)
+```
+## Die Landtafel des Markgrafthumes Mähren. Brünner Cuda
 ```{r}
-# TODO: pročistit
 desky1_files <- list.files("texts/171/", "*.txt", full.names = TRUE)
 desky1 <- readtext(desky1_files, docvarsfrom = "filenames")
 desky1_corpus <- corpus(desky1)
 desky1_tokens <- tokens(desky1_corpus)
 
-kwic(desky1_tokens, "taber*")
+kwic(desky1_tokens, c("taber*", "thaber*"))
+# kwic(desky1_tokens, "thaber*")
+kwic(desky1_tokens, "humul*")
+kwic(desky1_tokens, "slad*")
 
 ```
 
-
+## Die Landtafel des Markgrafthumes Mähren. Olmützer Cuda
 ```{r}
 desky2_files <- list.files("texts/301/", "*.txt", full.names = TRUE)
 desky2 <- readtext(desky2_files, docvarsfrom = "filenames")
 desky2_corpus <- corpus(desky2)
 desky2_tokens <- tokens(desky2_corpus)
 
-kwic(desky2_tokens, "taber*")
+kwic(desky2_tokens, c("taber*", "thaber*"))
+kwic(desky2_tokens, "humul*")
+kwic(desky2_tokens, "slad*")
+```
+
+## Decem registra censuum
+```{r}
+desky3_files <- list.files("texts/154/", "*.txt", full.names = TRUE)
+desky3 <- readtext(desky3_files, docvarsfrom = "filenames")
+desky3_corpus <- corpus(desky3)
+desky3_tokens <- tokens(desky3_corpus)
+
+kwic(desky3_tokens, c("taber*", "thaber*"))
+kwic(desky3_tokens, "humul*")
+kwic(desky3_tokens, "slad*")
 ```
