@@ -13,41 +13,179 @@ library(quanteda)
 library(readtext)
 
 options(width = 300)
+
+load_files <- function(path){
+    files <- list.files(path, "*.txt", full.names = TRUE)
+    text <- readtext(files, docvarsfrom = "filenames")
+    corpus <- corpus(text)
+    tokens(corpus)
+}
 ```
+
 ## Die Landtafel des Markgrafthumes Mähren. Brünner Cuda
 ```{r}
-desky1_files <- list.files("texts/171/", "*.txt", full.names = TRUE)
-desky1 <- readtext(desky1_files, docvarsfrom = "filenames")
-desky1_corpus <- corpus(desky1)
-desky1_tokens <- tokens(desky1_corpus)
+desky1 <- load_files("texts/171/")
 
-kwic(desky1_tokens, c("taber*", "thaber*"))
-# kwic(desky1_tokens, "thaber*")
-kwic(desky1_tokens, "humul*")
-kwic(desky1_tokens, "slad*")
+kwic(desky1, c("taber*", "thaber*"))
+kwic(desky1, "humul*")
+kwic(desky1, "slad*")
+kwic(desky1, "krcz*")
 
 ```
 
 ## Die Landtafel des Markgrafthumes Mähren. Olmützer Cuda
 ```{r}
-desky2_files <- list.files("texts/301/", "*.txt", full.names = TRUE)
-desky2 <- readtext(desky2_files, docvarsfrom = "filenames")
-desky2_corpus <- corpus(desky2)
-desky2_tokens <- tokens(desky2_corpus)
+desky2 <- load_files("texts/301/")
 
-kwic(desky2_tokens, c("taber*", "thaber*"))
-kwic(desky2_tokens, "humul*")
-kwic(desky2_tokens, "slad*")
+kwic(desky2, c("taber*", "thaber*"))
+kwic(desky2, "humul*")
+kwic(desky2, "slad*")
+kwic(desky2, "krcz*")
 ```
 
 ## Decem registra censuum
 ```{r}
-desky3_files <- list.files("texts/154/", "*.txt", full.names = TRUE)
-desky3 <- readtext(desky3_files, docvarsfrom = "filenames")
-desky3_corpus <- corpus(desky3)
-desky3_tokens <- tokens(desky3_corpus)
+desky3 <- load_files("texts/154/")
 
-kwic(desky3_tokens, c("taber*", "thaber*"))
-kwic(desky3_tokens, "humul*")
-kwic(desky3_tokens, "slad*")
+kwic(desky3, c("taber*", "thaber*"))
+kwic(desky3, "humul*")
+kwic(desky3, "slad*")
+kwic(desky3, "krcz*")
+```
+
+# Codex diplomaticus Bohemiae
+## CDB I
+```{r}
+cdb1 <- load_files("texts/1244")
+kwic(cdb1, c("taber*", "thaber*"))
+kwic(cdb1, c("humul*"))
+kwic(cdb1, c("slad*"))
+kwic(cdb1, c("krcz*"))
+```
+
+## CDB II
+```{r}
+cdb2 <- load_files("texts/1243")
+kwic(cdb2, c("taber*", "thaber*"))
+kwic(cdb2, c("humul*"))
+kwic(cdb2, c("slad*"))
+kwic(cdb2, c("krcz*"))
+```
+
+## CDB III/1
+```{r}
+cdb3a <- load_files("texts/565")
+kwic(cdb3a, c("taber*", "thaber*"))
+kwic(cdb3a, c("humul*"))
+kwic(cdb3a, c("slad*"))
+kwic(cdb3a, c("krcz*"))
+```
+
+## CDB III/2
+```{r}
+cdb3b <- load_files("texts/598")
+kwic(cdb3b, c("taber*", "thaber*"))
+kwic(cdb3b, c("humul*"))
+kwic(cdb3b, c("slad*"))
+kwic(cdb3b, c("krcz*"))
+```
+
+# Regesta Bohemiae et Moraviae
+## RBM I 
+```{r}
+rbm1 <- load_files("texts/222")
+kwic(rbm1, c("taber*", "thaber*"))
+kwic(rbm1, c("humul*"))
+kwic(rbm1, c("slad*"))
+kwic(rbm1, c("krcz*"))
+```
+
+## RBM II
+```{r}
+rbm2 <- load_files("texts/132")
+kwic(rbm2, c("taber*", "thaber*"))
+kwic(rbm2, c("humul*"))
+kwic(rbm2, c("slad*"))
+kwic(rbm2, c("krcz*"))
+```
+
+## RBM III
+```{r}
+rbm3 <- load_files("texts/130")
+kwic(rbm3, c("taber*", "thaber*"))
+kwic(rbm3, c("humul*"))
+kwic(rbm3, c("slad*"))
+kwic(rbm3, c("krcz*"))
+```
+
+## RBM IV
+```{r}
+rbm4 <- load_files("texts/196")
+kwic(rbm4, c("taber*", "thaber*"))
+kwic(rbm4, c("humul*"))
+kwic(rbm4, c("slad*"))
+kwic(rbm4, c("krcz*"))
+```
+
+## RBM VI/1
+```{r}
+rbm6a <- load_files("texts/698")
+kwic(rbm6a, c("taber*", "thaber*"))
+kwic(rbm6a, c("humul*"))
+kwic(rbm6a, c("slad*"))
+kwic(rbm6a, c("krcz*"))
+```
+
+## RBM VI/2
+```{r}
+rbm6b <- load_files("texts/699")
+kwic(rbm6b, c("taber*", "thaber*"))
+kwic(rbm6b, c("humul*"))
+kwic(rbm6b, c("slad*"))
+kwic(rbm6b, c("krcz*"))
+```
+
+## RBM VII/1
+```{r}
+rbm7a <- load_files("texts/1061")
+kwic(rbm7a, c("taber*", "thaber*"))
+kwic(rbm7a, c("humul*"))
+kwic(rbm7a, c("slad*"))
+kwic(rbm7a, c("krcz*"))
+```
+
+## RBM VII/2
+```{r}
+rbm7b <- load_files("texts/1060")
+kwic(rbm7b, c("taber*", "thaber*"))
+kwic(rbm7b, c("humul*"))
+kwic(rbm7b, c("slad*"))
+kwic(rbm7b, c("krcz*"))
+```
+
+## RBM VII/3
+```{r}
+rbm7c <- load_files("texts/1062")
+kwic(rbm7c, c("taber*", "thaber*"))
+kwic(rbm7c, c("humul*"))
+kwic(rbm7c, c("slad*"))
+kwic(rbm7c, c("krcz*"))
+```
+
+## RBM VII/4
+```{r}
+rbm7d <- load_files("texts/1063")
+kwic(rbm7d, c("taber*", "thaber*"))
+kwic(rbm7d, c("humul*"))
+kwic(rbm7d, c("slad*"))
+kwic(rbm7d, c("krcz*"))
+```
+
+## RBM VII/5
+```{r}
+rbm7e <- load_files("texts/1064")
+kwic(rbm7e, c("taber*", "thaber*"))
+kwic(rbm7e, c("humul*"))
+kwic(rbm7e, c("slad*"))
+kwic(rbm7e, c("krcz*"))
 ```

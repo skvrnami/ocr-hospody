@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Škvrňák" />
 
-<meta name="date" content="2023-07-09" />
+<meta name="date" content="2023-07-18" />
 
 <title>02_hospody</title>
 
@@ -352,19 +352,16 @@ display: none;
 
 <h1 class="title toc-ignore">02_hospody</h1>
 <h4 class="author">Michael Škvrňák</h4>
-<h4 class="date">2023-07-09</h4>
+<h4 class="date">2023-07-18</h4>
 
 </div>
 
 
 <div id="die-landtafel-des-markgrafthumes-mähren.-brünner-cuda" class="section level2">
 <h2>Die Landtafel des Markgrafthumes Mähren. Brünner Cuda</h2>
-<pre class="r"><code>desky1_files &lt;- list.files(&quot;texts/171/&quot;, &quot;*.txt&quot;, full.names = TRUE)
-desky1 &lt;- readtext(desky1_files, docvarsfrom = &quot;filenames&quot;)
-desky1_corpus &lt;- corpus(desky1)
-desky1_tokens &lt;- tokens(desky1_corpus)
+<pre class="r"><code>desky1 &lt;- load_files(&quot;texts/171/&quot;)
 
-kwic(desky1_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+kwic(desky1, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 <pre><code>## Keyword-in-context with 63 matches.                                                                                                                 
 ##   [11.txt, 246]                laneis cum dimidio et cum | Tabernis  | et Curticulis, Pratis,                    
 ##  [110.txt, 499]                    , II curticulis, 1373 |  taberna  | . vendidit hereditarie Sei lendas         
@@ -429,23 +426,22 @@ kwic(desky1_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 ##   [91.txt, 713]                  , vnam Curtieulam, vnam | Tabernam  | , Rubela ad ean- dem                      
 ##   [92.txt, 148]             Wrze- snycze quatuor laneos, | Tabernam  | , quinque Curticulas, lerciale            
 ##   [95.txt, 300]                   araturam, tres laneos, | Tabernam  | , wnam Curüculam, quarlam</code></pre>
-<pre class="r"><code># kwic(desky1_tokens, &quot;thaber*&quot;)
-kwic(desky1_tokens, &quot;humul*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky1, &quot;humul*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 0 matches.</code></pre>
-<pre class="r"><code>kwic(desky1_tokens, &quot;slad*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky1, &quot;slad*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 3 matches.                                                       
 ##  [403.txt, 529] . dalei ven Hand: | sLadislaw | *, d. i
 ##  [405.txt, 503]    teren. Haud: » | sLadislaw | *, d. i
 ##  [424.txt, 499] spü- teren. Hand: | sLadislaw | *, d. i</code></pre>
+<pre class="r"><code>kwic(desky1, &quot;krcz*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                                         
+##  [416.txt, 781] . Benessius de Konipas dictus | Krczma | Protiwezoni de Zastrzizl et eius</code></pre>
 </div>
 <div id="die-landtafel-des-markgrafthumes-mähren.-olmützer-cuda" class="section level2">
 <h2>Die Landtafel des Markgrafthumes Mähren. Olmützer Cuda</h2>
-<pre class="r"><code>desky2_files &lt;- list.files(&quot;texts/301/&quot;, &quot;*.txt&quot;, full.names = TRUE)
-desky2 &lt;- readtext(desky2_files, docvarsfrom = &quot;filenames&quot;)
-desky2_corpus &lt;- corpus(desky2)
-desky2_tokens &lt;- tokens(desky2_corpus)
+<pre class="r"><code>desky2 &lt;- load_files(&quot;texts/301/&quot;)
 
-kwic(desky2_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+kwic(desky2, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 <pre><code>## Keyword-in-context with 377 matches.                                                                                                                                    
 ##    [10.txt, 697]                      lays et heredes suos Curiam |  Tabernam   | et vnum quartale et duos                          
 ##   [105.txt, 190]             Curias arature Tres laneos Censuales |  Tabernam   | cum quartali arature, Molendinum                  
@@ -824,22 +820,21 @@ kwic(desky2_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 ##    [85.txt, 649]                  uil Ogpstoviox VIII subsides et |  tabernam   | et tre liberum de aratura                         
 ##    [90.txt, 385]              vno quartali quatuor curticulas III |  tabernas   | ( et mediam partem ville                          
 ##    [98.txt, 883]                      talia tres subsides el vnam |  tabernam   | Curiam arature eum vniuersis suis</code></pre>
-<pre class="r"><code>kwic(desky2_tokens, &quot;humul*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky2, &quot;humul*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 0 matches.</code></pre>
-<pre class="r"><code>kwic(desky2_tokens, &quot;slad*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky2, &quot;slad*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 3 matches.                                                                            
 ##  [391.txt, 460] einer viel Boskoieies.&quot; | sLadislw  | 3* ui incolis censibus
 ##  [427.txt, 911] Hand. angebrachten. pus | sLadislaw | *, 4. ^               
 ##  [439.txt, 701]         Hand der. None: | sLadislne | *, oskore ^ os</code></pre>
+<pre class="r"><code>kwic(desky2, &quot;krcz*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
 </div>
 <div id="decem-registra-censuum" class="section level2">
 <h2>Decem registra censuum</h2>
-<pre class="r"><code>desky3_files &lt;- list.files(&quot;texts/154/&quot;, &quot;*.txt&quot;, full.names = TRUE)
-desky3 &lt;- readtext(desky3_files, docvarsfrom = &quot;filenames&quot;)
-desky3_corpus &lt;- corpus(desky3)
-desky3_tokens &lt;- tokens(desky3_corpus)
+<pre class="r"><code>desky3 &lt;- load_files(&quot;texts/154/&quot;)
 
-kwic(desky3_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+kwic(desky3, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 <pre><code>## Keyword-in-context with 259 matches.                                                                                                                  
 ##  [107.txt, 137]              3 quartalia deberet habere et |   tabernam    | liberam, et servire debet            
 ##  [107.txt, 281]                   vyeko dicitur. Item tres |    taberne    | , ex quibus unam tenet               
@@ -1100,7 +1095,7 @@ kwic(desky3_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 ##   [51.txt, 412]                           S. Laurencii; et |    taberna    | solvit de quoque vase cere-          
 ##   [54.txt, 458]                             Ondra 1 ter. - |    Taberna    | 35 gr. Dobrzan opidum                
 ##    [84.txt, 27]                        nichil solvit. - De |   thaberna    | 29 gr. Summa pro</code></pre>
-<pre class="r"><code>kwic(desky3_tokens, &quot;humul*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky3, &quot;humul*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 49 matches.                                                                                                             
 ##  [104.txt, 110]           horreo ibidem constructo et orto |  humuli   | similiter ibi in- clusis discreto   
 ##  [109.txt, 233]                   pullos, fenum colligere, |  humulum  | carpere, fumales per 6              
@@ -1151,9 +1146,622 @@ kwic(desky3_tokens, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
 ##    [95.txt, 52]             quod dicti fratres omnes ortos |  humuli   | debent tenere ad decem annos        
 ##    [95.txt, 72] laborare sumptibus suis usque colleccionem |  humuli   | , et quando colligetur,             
 ##    [95.txt, 85]                recipere terciam [ partem ] |  humuli   | et pro dominis 2 ^</code></pre>
-<pre class="r"><code>kwic(desky3_tokens, &quot;slad*&quot;)</code></pre>
+<pre class="r"><code>kwic(desky3, &quot;slad*&quot;)</code></pre>
 <pre><code>## Keyword-in-context with 1 match.                                                    
 ##  [65.txt, 2] 52 | Sladovnicé | 3 étvrti 1 kopu minus</code></pre>
+<pre class="r"><code>kwic(desky3, &quot;krcz*&quot;)</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                         
+##  [320.txt, 95] ltem unus omagialis. W | Krczi | Wissegradensi. W Krezi de</code></pre>
+</div>
+<div id="codex-diplomaticus-bohemiae" class="section level1">
+<h1>Codex diplomaticus Bohemiae</h1>
+<div id="cdb-i" class="section level2">
+<h2>CDB I</h2>
+<pre class="r"><code>cdb1 &lt;- load_files(&quot;texts/1244&quot;)
+kwic(cdb1, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 13 matches.                                                                                                 
+##    [133.txt, 90]             5 Cromesir!* cum | tabernariis  | et theloneo, quod ad              
+##   [203.txt, 236] habitatio eius deserta et in | tabernaculis | eius non sit qui inhabitet        
+##   [269.txt, 347]           sit mandatum. » Si |   taberna    | occulta? fuerit in domo           
+##   [312.txt, 276]          * cum villa et sola |   taberna    | et uno molendino, Culchov         
+##   [312.txt, 287]               ^&#39;* cum duabus |   tabernis   | , Chegost,!&quot;                      
+##   [369.txt, 196] villam Raygradensem? una cum |   tabernis   | absolute et forum et theloneum    
+##   [369.txt, 380]        Raygradici!* simul et | tabernarios  | in Lucka!&quot; constitui              
+##   [375.txt, 428]     , decimum forum, decimam |   tabernam   | et tocius nostri census decimam   
+##   [426.txt, 250]  ecclesie contulit. Quatuor? | tabernarios  | prefate ecclesie dedi in perpetuum
+##  [511.txt, 1254]             grad; villa, ubi |  tabernarii  | monii Brevnov. ( 1048             
+##   [566.txt, 295]        15,25. 389,25. decima |   taberna    | 363, 25. decima                   
+##   [575.txt, 633]        440, 5. supellectilis |   Taberna    | 300, 20. 357                      
+##   [575.txt, 654]                   257, 20. - |  tabernarii  | 120,5. 121,5. 357,25</code></pre>
+<pre class="r"><code>kwic(cdb1, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 6 matches.                                                                                 
+##  [404.txt, 459] denarii. De uniformi plaustro | humuli  | ^ tyna&quot; datur,         
+##   [413.txt, 68]       vgezd unum et in- sulam | humuli  | in vill, que vocatur   
+##  [445.txt, 355]   dedit vgezd unum et insulam | humulip | in villa, quae vocatur 
+##  [504.txt, 699]           ; villa, ubi insula | humuli  | monii. Cladrub. (      
+##  [568.txt, 210]            e: curia hospitum. | humulum | , omulum 369,20, 25    
+##  [571.txt, 483]                  1. omulum ». | humulum | . onus unius hominis 35</code></pre>
+<pre class="r"><code>kwic(cdb1, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(cdb1, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="cdb-ii" class="section level2">
+<h2>CDB II</h2>
+<pre class="r"><code>cdb2 &lt;- load_files(&quot;texts/1243&quot;)
+kwic(cdb2, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 21 matches.                                                                                                              
+##   [233.txt, 36]                . Ad hec omnes communiter |  tabernas  | habeant. Preterea campiones non       
+##   [26.txt, 276]                      touici, Zirouici; V |  tabernas  | : Lin Olomuch, ni                     
+##   [265.txt, 60]   praefatae civitatis infra unum miliare |  tabernae  | nullae prorsus fiant, sed             
+##   [281.txt, 25]   monasterio sancti Stephani in Hradisté |  tabernam  | in Pferov restituit, consentiente     
+##  [281.txt, 234]    Gradist vulgariter nominatur, quaedam |  taberna   | in Prerow ad usum 20                  
+##  [281.txt, 297]              dicto loco sive foro Prerow |  tabernam  | pro remedio nostrae 25 animae         
+##  [281.txt, 334]  huius itutionis et donationis praefatae |  tabernae  | in Prerow supra dicto abbati          
+##  [309.txt, 366]                      ius fori nec non et | tabernarum | ^ usus secundum numerum quantitatem   
+##  [309.txt, 373]   usus secundum numerum quantitatem none |  taberne   | census reddatur. Ecclesie Stragowiensi
+##  [508.txt, 228]                     . Liloodl g. Littaus |  taberna   | monii. Hradité prope Naclvcu          
+##  [512.txt, 454]                              , 25. - ibd |  taberna   | Gradicensis ( 1201 ) 18,25            
+##  [514.txt, 148]                            ) 257,5. ibd. |  taberna   | ad monium. Hradisté ap                
+##  [523.txt, 418]                            s v form, ubi |  taberna   | monii Gradicensis Q225 ) 273          
+##  [562.txt, 228]                              30. c. none |  taberne   | 301,25. - V.                          
+##  [575.txt, 389]                         10. sutores 217, |  Taberna   | 18,20. 225, 1                         
+##  [575.txt, 402]                            , 25. 901,25. |  tabernam  | in villa concedere 80,                
+##  [575.txt, 410]                        concedere 80, 10. |  tabernas  | do- nare talentum 429,                
+##   [59.txt, 289]         Bohemiae, monasterio in Kladruby |  tabernas  | in villa eiusdem nominis donat        
+##    [60.txt, 48]           aetas, me Cladrubiensi cenobio |  tabernas  | ^ in villa eiusdem nominis            
+##   [60.txt, 575]                 numerus omissus est, aut |  tabernam  | 40 corrigendum est. -                 
+##   [88.txt, 167] preces venerabilis patris nostri Ruperti |  tabernam  | liberali munificencia concessimus. Ut</code></pre>
+<pre class="r"><code>kwic(cdb2, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 3 matches.                                                                                 
+##  [225.txt, 310] iusticia partem. Decima de | humulo | per totam terram, que      
+##  [390.txt, 549]      , et locum insule cum | humulo | , quod est in medio        
+##  [564.txt, 221]               59,25. d. de | humulo | quatuordecim vocantur 80, 1</code></pre>
+<pre class="r"><code>kwic(cdb2, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 2 matches.                                                                                    
+##  [489.txt, 545]            ( z2. ) de | Sladebach | , ministerial ( 1212 )          
+##   [98.txt, 285] de Pouch, Henricus de | Sladebach | , Eckehardus et Henricus fratres</code></pre>
+<pre class="r"><code>kwic(cdb2, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                               
+##  [425.txt, 51] Mihle, predium Pratieticze, | Krcz | et Branik cum eorum omnibus</code></pre>
+</div>
+<div id="cdb-iii1" class="section level2">
+<h2>CDB III/1</h2>
+<pre class="r"><code>cdb3a &lt;- load_files(&quot;texts/565&quot;)
+kwic(cdb3a, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 4 matches.                                                                                               
+##  [113.txt, 234]      ville ad miliare unum aliquis | tabernam  | habere presumat, vel victualia
+##   [134.txt, 50] totaliter Ol i ecclesie decernimus | tabernas  | cano- nicorum esse liberas in 
+##  [190.txt, 360]   denarios qua- libet septimana de | thaberna  | medonis in Cromezir et terram 
+##  [191.txt, 373]     ecclesia beati Pet cui dedimus | thabernam | quandam in Prerow et terram</code></pre>
+<pre class="r"><code>kwic(cdb3a, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(cdb3a, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(cdb3a, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="cdb-iii2" class="section level2">
+<h2>CDB III/2</h2>
+<pre class="r"><code>cdb3b &lt;- load_files(&quot;texts/598&quot;)
+kwic(cdb3b, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 2 matches.                                                                                  
+##  [19.txt, 168] cum defecerimus, in eterna | tabernacula | nos admittant.* e       
+##  [67.txt, 193]           , silvis, aquis, |   taberna   | , molendino cum terra ad</code></pre>
+<pre class="r"><code>kwic(cdb3b, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(cdb3b, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(cdb3b, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+</div>
+<div id="regesta-bohemiae-et-moraviae" class="section level1">
+<h1>Regesta Bohemiae et Moraviae</h1>
+<div id="rbm-i" class="section level2">
+<h2>RBM I</h2>
+<pre class="r"><code>rbm1 &lt;- load_files(&quot;texts/222&quot;)
+kwic(rbm1, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 35 matches.                                                                                                                    
+##   [102.txt, 329]                        , et alia decani cum | tabernario  | , pro hac etiam solvitur               
+##   [102.txt, 457]             praefato duce emit Cromesir cum | tabernariis | et theloneo, quod ad                   
+##    [146.txt, 56]           eidem ecclesiae contulit. Quatuor |   taber-    | marios praefatae ecclesiae dedi in     
+##   [168.txt, 238]                  principis sit mandatum. Si |   taberna   | . oceulta fuerit in domo               
+##   [170.txt, 259]            tempore Morauiam regens, addidit | tabermarium | ibidem in NakL, et                     
+##    [191.txt, 48]                     Gobza eum villa et sola |   taberna   | et uno mo- lendino Ceulchow            
+##    [191.txt, 56]             mo- lendino Ceulchow cum duabus |  tabernis   | . Chegost. Sedlesovici.                
+##   [213.txt, 176]                      Opatouici, Zirouici; V |  tabernas   | : L. in Olomuch                        
+##   [242.txt, 112]    preces venerabilis patris nostri Raperti |  tabernam   | liberali munificentia concessimus. -   
+##   [323.txt, 197]     praefatae civitatis infra unum milliare |  tabernae   | nullae prorsus fiant, sed              
+##   [329.txt, 457]                 eidem. mo- masterio quandam |  tabernam   | in loco sive foro Prerow               
+##   [339.txt, 116]                            fori, nec non ét | tabernarum  | usus secundum mumerum quantitatem.     
+##   [339.txt, 123]         secundum mumerum quantitatem. nonae |  tabernáe   | . census red- datur.                   
+##    [353.txt, 65]        pro Csarnowans commutantes; exceptis |  tabernis   | et capella cum Sorte sua               
+##   [357.txt, 172]             eidem monasterio contulit; duas |  tabernas   | et jus fori im Byfom                   
+##   [377.txt, 359]                            , silvis, aquis, |   taberna   | , molendino, cum terra                 
+##   [379.txt, 319]        decim denarios qualibet septimana de |  thaberna   | medonis in Cromesir, et                
+##   [380.txt, 106]                    beati Petri, cui dedimus |  thabernam  | quandam in Prerow, et                  
+##   [395.txt, 248] Olomucensi ecclesiae offerentes decernimus, |  tabernas   | canonicorum esse liberas in Cyriorige  
+##   [403.txt, 240]              villac ad miliare unum aliquis |  tabernam   | habere praesumat, vel victualia        
+##   [415.txt, 192]               , nullis obstantibus casibus, |  tabernis   | eorum utantur per- forsan propter      
+##   [471.txt, 616]                     prospera sint et firma, |  tabernas   | ipsorum, in quibus primitus            
+##   [471.txt, 645]                   omnino; maxime vero illas |  tabernas   | , quae ad dotem pertinent              
+##   [515.txt, 136]                    etiam, qo de.cetéro simt |  thabernae  | extra civitatem ad milliare in         
+##     [52.txt, 55]               , villam Raygradensem una cum |  tabernis   | absolute et forum et theloneum         
+##    [52.txt, 227]      Brevnov villam Aaygradici similiter et | tabernarios | in Lucka constitui. Prae-              
+##   [541.txt, 409]               et ejus heredibus molendinum, |   taber-    | mam, tertium denarium de               
+##   [541.txt, 470]                         sape. fatos mansos, |  tabernam   | , mo- lendinum possit conferre         
+##    [57.txt, 585]                    deci- mum forum, decimam |  tabernam   | , et totius nostri census              
+##   [581.txt, 527]                            mus, - Insuper - |  tabernas   | ipsorum, in quibus primitus            
+##   [581.txt, 561]                   omnino, maxime vero illas |   taber-    | mas, quàe ad.                          
+##   [591.txt, 468]                 in Antiqua Brunna confert » |  tabernam   | in antiqua Brunna, «                   
+##   [628.txt, 148]                  » Ad haec omnes comuuoiter |  tabernas   | habeant Praeterea Campioics non babeant
+##  [728.txt, 1044]                         de - Qyrisrige, ubi |   taberna   | ecclesiae                              
+##    [94.txt, 194]                 ( Olomucensi ) Cromesir cam | tabernariis | et teloneo, néc non</code></pre>
+<pre class="r"><code>kwic(rbm1, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 4 matches.                                                                                        
+##  [229.txt, 567]           , et locum insulae cum | humulo  | , quod est im medio        
+##  [471.txt, 422]              vase vini, de curru | humuli  | quatuor; de curru busonis  
+##   [78.txt, 465]     ipsam circumfluit Silvam, et | humulum | , qui circa flumen Albea   
+##   [78.txt, 479] Prelusc villam cum hospitibus er | humulm  | , et quousque ipsius villae</code></pre>
+<pre class="r"><code>kwic(rbm1, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                          
+##  [807.txt, 845] Wsechar,, Wsekar, | Sladrib | : un 59. TEE</code></pre>
+<pre class="r"><code>kwic(rbm1, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-ii" class="section level2">
+<h2>RBM II</h2>
+<pre class="r"><code>rbm2 &lt;- load_files(&quot;texts/132&quot;)
+kwic(rbm2, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 87 matches.                                                                                                                               
+##   [1027.txt, 199]            concedimus duos laneos libere cum |   taberna    | ; insuper de sedecim laneis                    
+##   [1027.txt, 250]                         ( sie ) civibus unam |   tabernam   | tantummodo concessimus i Dantes et             
+##    [103.txt, 448]      Moraviae civibus Opaviensibus censum de |   tabernis   | relaxat, -, Notum                              
+##    [103.txt, 468]                        Opawia cuppam, que de |   tabernis   | semper reddita est, relaxauimus                
+##   [1041.txt, 354]                      ut de regali mensura et |   taberna    | medonis sive vini vel cerevisiae               
+##   [1052.txt, 332]                 in perpetuum forum ipsum cum |   tabernis   | omnibus et solucionibus et quibuslibet         
+##    [1104.txt, 63]                       eadem villa, exiens de |   taberna    | ad potandum me secum invitabat                 
+##    [1104.txt, 78]                ante foras uoluis- sem illius |   taberne    | consedere, statim quidam inimicus              
+##   [1183.txt, 207]                   , nec stubas balneares seu |   tabernas   | christianorum frequentare seu intrare presumant
+##   [1207.txt, 217]                et possideant forum ipsum cum |   tabernis   | omnibus, quas ibi habere                       
+##   [1229.txt, 447]                 oc, custodiae&quot; Wissegradensi |   tabernam   | medonis Pragae donat. -                        
+##    [1230.txt, 24]                              ibus ad Wi: iam |   tabernam   | medonis infra muros Pragensis positam          
+##    [1230.txt, 42]                  officii relevatus, eum alia |   taberna    | medonis ibidem a retroactis i                  
+##    [1230.txt, 94]                , ut de provisione praedictae |   tabernae   | aliquod novum lumen ad cultum                  
+##   [1269.txt, 777]                              villa Mor., ubi |    tabern    | : monasterii Gradicensis ( 1209                
+##   [1270.txt, 704]                             201 a2. civi ubi |   taberna    | ecclesiae Se- covxensis ( 978                  
+##   [1343.txt, 222]                         Lassczan, villa, ubi |   taberna    | mon. rdi. gap                                  
+##   [1346.txt, 564]                              villa Mor., ubi |   taberna    | monasterii Gra - dicensis (                    
+##   [1346.txt, 655]                          . - Oives: Henricus |  taberuator  | , Sifridus, Chun- radus                        
+##   [1366.txt, 376]                                , villa, wb ) |   taberna    | mon. Gradicensis ( 1976                        
+##   [1394.txt, 339]       ecclesiae Boleslav. postea Chunicensis |   taberna    | eccl. s.&quot;                                      
+##   [1477.txt, 238]                              ) 895. enppa de |   tabernis   | Opavine reddita ( 1200 )                       
+##  [1483.txt, 1027]                    . etiam physicus. medonis |   taberna    | mechaniei rites in Gewiczl el                  
+##   [1489.txt, 786]                                 ( 289 ) 160. |   taberna    | , t, taberna libera                            
+##   [1489.txt, 790]                                . taberna, t, |   taberna    | libera, tabernarius ( 1385                     
+##   [1489.txt, 793]                           t, taberna libera, | tabernarius  | ( 1385 ) 52,43.                                
+##    [162.txt, 258]                          ut in eodem. oppido |   tabernas   | habeant, iudiciis more aliarum                 
+##    [180.txt, 362]                               , de qua et de |   taberna    | medonis, quam ipse decanus                     
+##    [183.txt, 349]                         hanc, araturam vnam, |   taberhas   | duas, molendinum vnum super                    
+##    [200.txt, 355]                       . ltem in Leven- dorff |  thabernam   | unam libere tenebunt, et                       
+##    [200.txt, 363]                    tenebunt, et nullae aliae |  thabernae   | stabunt per villas alias infra                 
+##     [209.txt, 33]                    integram, cum subsidibus, |   taberna    | et molendino et omnibus pertinencijs           
+##     [213.txt, 26]                 ab ipsa ciuitate ad milliare |   taberna    | non sit, et quod                               
+##    [232.txt, 399]                  , per amplius et perfectius | tabernaculum | , quod non erit huius                          
+##    [241.txt, 208]                       minus quartali e&amp; vnam |   tabernam   | pro illuminanda capella cum pratis             
+##    [243.txt, 361]                    XII lanei minus quartali, |   taberna    | , ortus, piscaciones,                          
+##    [243.txt, 388]                    VI laneos minus quartali, |   tabernam   | , ortum cum piscacionibus,                     
+##    [246.txt, 239]                   tione nostra, videlicet de |   tabernis   | in nostris et aliis ciuitatibus                
+##     [278.txt, 88]                habere concedimus, et quatuor |   tabernas   | , qvarum vna est ecclesie                      
+##    [281.txt, 428]             perpetuo possidendum, Adhec unam |   tabernam   | liberam, unam rotam molendinam                 
+##    [323.txt, 462]                    liberos, molendinum vnum, |   tabernam   | vnam et tercium de iudicio                     
+##     [34.txt, 413]                       uno molendino, et unam |   tabernam   | , si poterit fieri sine                        
+##    [343.txt, 382]                  molendinum unum liberum, et |   tabernam   | , et tertium denarium dicte                    
+##    [397.txt, 390]                   in Prerow, uidelicet media |   taberna    | , et quibusdam curti- culis                    
+##    [397.txt, 403]                non quibusdam agris ad eandem |   tabernam   | pertinentibus illi, qui reparat                
+##    [398.txt, 110]         Chnutelvelde praecipit, ne impediant |   tabernam   | et cauponem in villa Feustritz                 
+##    [406.txt, 166]                        pleno iure, qua- tuor |   tabernas   | et&#39; unum molendinum cum                        
+##    [420.txt, 358]                      pertinentibus,* nec non |   tabernis   | in villis Nakel, Lubos                         
+##    [428.txt, 109]        quilibet laneus civitatis et quelibet |   taberna    | et quiuis artifex sex denarios                 
+##    [428.txt, 297]                     et etiam decimum laneum, |   tabernam   | unam, molendinum unum,                         
+##     [43.txt, 365]                          et aliud de jure et |   tabernam   | , dummodo non noceat aliis                     
+##    [432.txt, 195]                           , balnei, arearum, |  tabernarum  | in uillis Nakel, Luboss                        
+##    [480.txt, 568]                  una potest fieri fabrica et |   thaberna   | . Omnes autem isti de                          
+##    [486.txt, 334]         suo-pertinebunt. - Qui praesumptuose |   tabernam   | aliquam intraverit ratione rixae,              
+##     [50.txt, 567] deo retributionis beate gratiam prestolantes |  thabernas   | canonicorum, que primitus inpedie-             
+##     [50.txt, 578]                bantur per nostros beneficos, | thabernarium | Olomucensem seu per villicum nostrum           
+##     [512.txt, 32]                       in ecclesia, balneo et |   taberna    | conuenerit, iudex tenetur sibiibidem           
+##    [512.txt, 355]                        et, due curticule cum |   taberna    | sua ibidem, ius quoque                         
+##    [512.txt, 374]                             in vino, cum vna |   taberna    | sita in Antiqua Brunna ad                      
+##    [514.txt, 524]                   licet de quolibet laneo et |   taberna    | sex denarios annuatim reddere tenebantur       
+##    [614.txt, 323]               Item in oppido nostro Prewlino |   tabernam   | unam cum pleno dominio.                        
+##     [64.txt, 126]                in per- petuum obtineant duas |   tabernas   | medonis, unam ex predecessorum                 
+##     [669.txt, 61]                   in spacio unius mi- liaris |   tabernam   | , braxare aut ulla fora                        
+##    [669.txt, 299]                     dici tres mansos et unam |   tabernam   | et tercium denarium de culpis                  
+##    [681.txt, 229]              Item quilibet laneus ciuitatis, |   taberna    | et quilibet artifex dabit sex                  
+##    [681.txt, 346]                   ltem inhibemus, ne aliquis |   tabernam   | infra milliare ad eam ciuitatem                
+##    [710.txt, 281]                      . - Item iudici contuli |  thabernam   | liberam, molendinum liberum et                 
+##    [711.txt, 223]                  et successo- ribus eius pro |   taberna    | et molendino in Hulin destructis               
+##    [711.txt, 253]              secundi fossati mo- lendinum et |   taberna    | , que erant de dote                            
+##    [711.txt, 291]      proventibus pateretur, pro destructione |   taberne    | predicte censum dimidie marce arg              
+##    [714.txt, 397]                  ipsi quam he- redes ipsorum |   tabernam   | de novo, et siccatorium                        
+##     [726.txt, 46]                  . Item quotque erunt ibidem |   taberne    | , uiaqueque soluit dimidium fertonem           
+##    [726.txt, 438]                 . Item quotquot erunt ibidem |   taberne    | , una- queque soluit dimidium                  
+##    [801.txt, 297]  panéhedinc vulgariter appellantur, inclusis |  thabernis   | duabus, que illic esse                         
+##     [82.txt, 153]           miliare ciui- tatis predicte nulla |   taberna    | penitus habeatur. Demum statuimus              
+##    [828.txt, 367]                    fertonem puri argenti. Et |   tabernam   | liberam, et liberum pistorium                  
+##    [828.txt, 540]                       in Lubavia, Hen- rieus |  tabernator  | , Sifridus braxator, Chunradus                 
+##     [83.txt, 437]           loco quolibet nullatenus ali- quis |  thabernam   | habere, braxare cereuisiam uel                 
+##    [841.txt, 269]                    . Prae- terea de qualibet |   taberna    | , quotquot ibidem fuerint,                     
+##     [844.txt, 69]   perpetuo presentare, singulis nichilominus |   tabernis   | in Budin a solgcione i                         
+##    [844.txt, 141]          successores liberum laneum, liberam |   tabernam   | et tertium denarium de iudicio                 
+##    [877.txt, 263]                   Hyrdoborzicz, uno laneo ef |   taberna    | , qui soluit quinque halenses                  
+##    [887.txt, 296]                   Hridoborzicz, umo laneo et |   taberna    | , que soluit quinque lotones                   
+##    [891.txt, 253]                pro carnificibus, pistoribus, |   tabernis   | , que ecclesia ipsa antequam                   
+##     [90.txt, 330]                 et Hohendorf nuncupatur, cum |   tabernis   | ac omni iure et utilitate                      
+##    [945.txt, 505]                    , vendidit vnum Janeum et |   tabernam   | in Topolan pro XVII marcis                     
+##    [982.txt, 121]                  de artificio suo, quaelibet |   taberna    | et quodlibet molendinum super rivulum</code></pre>
+<pre class="r"><code>kwic(rbm2, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 10 matches.                                                                                                 
+##  [1191.txt, 153]            , ortos quoque vinorum, | humulorum  | , olerum, prata optima        
+##    [169.txt, 81]               , ortis, curticulis, | humulariis | , agris cultis et,            
+##   [182.txt, 394]               , ortis, eurticulis, | humulariis | agris cultis et inculis;      
+##   [183.txt, 307]               , ortis, curticülis, | humulariis | , agris cultis et incultis    
+##   [362.txt, 257]          vltra nemus et vnum ortum | humularium | circa Olomuz, qui sic         
+##    [50.txt, 433]             uel salem, segetem uel |  humulum   | , seu alia quelibet deducunt  
+##   [654.txt, 354]                pro pratis suis e £ | humulariis | faciendis. Insuper octo diebus
+##    [782.txt, 12]    . tamen quod usufructum eiusdem |  humuleti  | ad tempora vite mee percipere 
+##    [782.txt, 33]      pro tempore fuerit, percipiet |  humuleti  | decimam memorati, post mortem 
+##   [984.txt, 150] Item collectoribus thelonei salis, |   humuli   | et staterae dedi XII gros</code></pre>
+<pre class="r"><code>kwic(rbm2, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(rbm2, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-iii" class="section level2">
+<h2>RBM III</h2>
+<pre class="r"><code>rbm3 &lt;- load_files(&quot;texts/130&quot;)
+kwic(rbm3, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 33 matches.                                                                                                        
+##  [103.txt, 510]            duos laneos liberos, unam |  tabernam   | liberam et nullus aliam tabernam   
+##  [103.txt, 515]     tabernam liberam et nullus aliam |  tabernam   | habere debet. Nulli eciam          
+##  [104.txt, 320]            cuprifaber II s. Martinus | tabernarius | [ s. Domus Lunakonis               
+##  [140.txt, 190]                ibidem lottus, de una |   taberna   | quinque lotones, de balneo         
+##  [140.txt, 240]                de judicio, culpis et |  tabernis   | duodecim judicio ibidem in Greliez 
+##   [174.txt, 10]      . Bohemiae annum tantum Martino | tabernario  | pro XXIIII sexag. gr               
+##  [249.txt, 498]   emphiteotico venditorum, ac tribus |  tabernis   | liberis et tribus molendinis et    
+##  [274.txt, 206]             eadem villa laneum vnum, |  tabernam   | et judicium cum tercio de-         
+##  [361.txt, 469]              laneis et una pu- blica |   taberna   | liberos absque omni census onere   
+##  [430.txt, 299]   nec braseatores nec braxatores nec |   taber-    | narii uel pistores, carnifices     
+##  [455.txt, 348]      judicium ibidem cum vna publica |   taberna   | , vno pistore, vno                 
+##  [471.txt, 552]              ac altaristarum, non in |  tabernis   | vel locis suspectis, quilibet      
+##  [511.txt, 426]        ibidem in Antiqua Colonia cum |  thaberna   | , item duo rubeta,                 
+##  [559.txt, 205]             bona ibidem cum judicio, |   taberna   | et pistore confert. -              
+##  [559.txt, 248]         Wurbezan cum judicio nostro, |   taberna   | et pistore uno ibidem liberaliter  
+##  [559.txt, 335]             dictos laneum, judicium, |  tabernam   | et pistorem libere jure hereditario
+##  [576.txt, 327]              ac duos laneos liberos, |  tabernam   | cum molendino, fabrum,             
+##  [621.txt, 289]      status uel preeminencie fuerit, |  tabernas   | vnam uel plures infra distanciam   
+##   [63.txt, 325]     quatuor mensuras capere possunt, |  tabernam   | , testorium, pistorem,             
+##  [643.txt, 230]     brasia vel ceruisiam braxare aut |  tabernas   | habere audeat. - -                 
+##  [650.txt, 166]      ad unius miliaris spatium nulla |   taberna   | in aliqua villa haberi debeat      
+##  [650.txt, 228]                eos ad hoc arceant et |  tabernas   | , que contra nostram presentem     
+##  [682.txt, 339] ab antiquo tempore consweuerunt esse |   taberne   | , carnifices et pistores,          
+##  [688.txt, 223]            culparum nec non laneo et |   taberna   | ibidem liberis cum piscariis ex    
+##  [724.txt, 123]      vendere aut exponere seu locare | tabernatori | aut viro potenti nec cuiquam       
+##   [743.txt, 24]                vicino. - Item Duchon |   taber-    | nario ES: domo et                  
+##   [791.txt, 91]           . - ltem orphanis Wankonis | tabernariis | pro domo obtinenda. -              
+##  [791.txt, 201]            Kluglini. ] tem Benedicto | tabernario  | pro domo Nicolai Knoblouch empta   
+##  [826.txt, 453]               . Boemiae. Benedictus, | tabernarius | , incola dni ( 1333                
+##  [842.txt, 478]                  525. Duchoh, Duchon | tabernarius | , rs civit, Prag                   
+##   [85.txt, 299]   quod in hereditate prescripta vnam |  tabernam   | pro se possint et debeant          
+##  [958.txt, 420]               causae maiorem, vio- | |   taberna   | in&quot; ila Babovice (                 
+##  [958.txt, 569] notari bernae peoriaciao Brunensis | | taberaarii  | im U, 1327 )</code></pre>
+<pre class="r"><code>kwic(rbm3, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 22 matches.                                                                                                              
+##  [124.txt, 491]                anno vngeltum de sale et |  humulo   | locauimus Vlmanno Causidico pro XLV     
+##  [149.txt, 464]                Item vngeltum de sale et |  humulo   | dimissum est Perschinoni pro quadraginta
+##  [173.txt, 487]          dimissum est vngeltum salis et |  humuli   | a die Natiuitatis Christi per           
+##  [205.txt, 220]                   &quot; Vngeltum de sale et |  humulo   | locatum est Chonrado Salezer pro        
+##  [279.txt, 139]    Dytrico salinariis vngeltum salis et |  humuli   | pro XLII sexag.,                        
+##   [313.txt, 84]                   . - Vngeltum salis et |  humuli   | Damschoni et Martino pro XLIIII         
+##  [313.txt, 317]                          gr. De sale et |  humulo   | XXII sexag. Meinhardo Rokczaner         
+##  [313.txt, 429]                   pecudibus, de sale et |  humulo   | et de melle Meinhardo Rockzaner         
+##  [426.txt, 132] medium denarium- Currus adducens saccum |  humuli   | quatuordecim, si autem saccus           
+##  [426.txt, 150]                  , fertonem dabit, biga |  humuli   | septem denarios, si autem               
+##  [426.txt, 173]                   quod rej dicitur, cum |  humulo   | denarium unum dabit, si                 
+##  [556.txt, 384]                          -! ) Fortasse: |  humuli   | . 1401 ) 1327,                          
+##   [56.txt, 549]     pro quibus locauimus sibi thelonium |  humuli   | et salis a dominica Letare              
+##  [596.txt, 527]      laneos hereditatis ibidem cum orto |  humuli   | et duobus ortis ollerum.                
+##  [726.txt, 129]                      , pratis, pascuis, | humuletis | , rubetis, insulis,                     
+##   [79.txt, 317]                . pragens. tem thelonium |  humuli   | et salis dimissum fuit Vlmanuo          
+##   [79.txt, 430]                XIII sex. Item thelonium |  humuli   | et salis dimissum fuit secunda          
+##  [798.txt, 497]   anno quolibet sibi sedecim strichones |  humuli   | volumus assignare. Est autem            
+##   [80.txt, 144]             . pergameno. Ttem thelonium | humuliet  | salis dimissum fuit Alberto Stukonis    
+##   [82.txt, 289]               ltem thelonium de sale et |  humulo   | dimissum est Alberto Stukoni,           
+##   [82.txt, 464]                ltem telonium de sale et |  humulo   | Vlmanno Causidico dimissum est pro      
+##  [947.txt, 566]                   in Bohemiam Quom 309. |  humulus  | , Juneii rius ( 1828</code></pre>
+<pre class="r"><code>kwic(rbm3, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(rbm3, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-iv" class="section level2">
+<h2>RBM IV</h2>
+<pre class="r"><code>rbm4 &lt;- load_files(&quot;texts/196&quot;)
+kwic(rbm4, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 52 matches.                                                                                                                    
+##  [1008.txt, 473]                       1940 ) 894. cima |   taberna   | ( 1341 ) 408.                               
+##   [101.txt, 274]     ad distanciam vnius miliaris nulle |   taberne   | seu brasiatoria instaurentur vel eciam      
+##  [1017.txt, 263]                           1234 ) Da T. |   taberna   | ( 1333 ) 802.                               
+##  [1017.txt, 284]                          ( 1341 ) 851; |   taberna   | libera 1542 ) 476;                          
+##  [1017.txt, 290]                     libera 1542 ) 476; |   taberna   | libera n Rynolei ( 1840                     
+##  [1017.txt, 309]                           1807&#39; ) 823; |  tabernae   | in. Wodn: irs                               
+##  [1017.txt, 342]                          ( 1845 ) 621; |  tabernae   | is, v. Hestomice                            
+##  [1017.txt, 366]                          ( 1337 ) 179. | tabernarii  | circa. finalem Gurimensem (                 
+##    [15.txt, 382]                     re et torpore, cum |   taberna   | libera et cum libera curia                  
+##    [177.txt, 21]           perpetuo et haberi. Nullaque |   taberna   | nec aliqua opera mechanica intra            
+##    [177.txt, 51]              de Bezdez sub ipso castro |  tabernam   | ad vitae suae tempora habere                
+##   [178.txt, 426]     videlicet quod vniuerse et singule |   taberne   | ciuitatis Pragensis queuis earum de         
+##   [178.txt, 501]          nullus in regno nostro Boemie |  tabernas   | habet admittere nisi ipse,                  
+##   [178.txt, 526]                  Orsichow et Slana, ui |  tabernas   | in predictis districtibu8 admittere poterint
+##   [178.txt, 545] ciuitatibus regni nostri Boemie nullam |  tabernam   | tenetur admittere imfra spacium miliaris    
+##   [232.txt, 140]  foras ipsius ciuitatis aliqua publica |   taberna   | hábeatur, quod videlicet Statutum           
+##   [232.txt, 167]      freti et gauisi auctoritate regia |  thabernas  | huiusmodi destruant et adnichilent,         
+##   [240.txt, 604]         regno Boeraie, nichilominus de |  tabernis   | publicis infra spacium vnius miliaris       
+##    [311.txt, 20]                , grangias sive curias, |  tabernas   | sive taber- marios ac alios                 
+##    [311.txt, 22]             sive curias, tabernas sive |   taber-    | marios ac alios mechanicos in               
+##   [317.txt, 399]           Stochow, recognovit publice, |  tabernam   | suam liberam in villa nostra                
+##   [317.txt, 498]                    quod is, qui eandem |  tabernam   | inhabitat, cum omnibus suis                 
+##    [318.txt, 93]                   villae, duos laneos, |  tabernam   | , molendinum, pistorem,                     
+##   [344.txt, 101]                    /, lahnen und einer |   taberne   | , um 80 mark;                               
+##   [360.txt, 337]    pistoribus, carnificibus, sutoribus | tabernariis | , fabris, braxatoriis,                      
+##   [378.txt, 248]     infra spacium vnius miliaris citra |  tabernam   | tenere debeat aut habere,                   
+##   [378.txt, 270]     dicte et ciuibus Pragensibus ipsam |  tabernam   | destruere auctoritate propria et delere     
+##   [378.txt, 280]          delere et nichi- lominus idem | tabernarius | , quicunque fuerit, vnam                    
+##   [409.txt, 394]               de telonio, item decimam |  tabernam   | , decimum lapidem sebi collati              
+##   [420.txt, 268]                pro tempore fuerit, cum |   taberna   | , pistore, carni- fice                      
+##    [438.txt, 31]                    , ut in dieta villa |  tabernam   | hereditariam et census ac vtilitates        
+##   [482.txt, 470]    monasterii prenotati villa in eadem |  tabernam   | liberam, carnificem, pistorem               
+##   [505.txt, 407]    Recognoverunt etiam, quod quaelibet |   taberna   | , in qua cerevisia propinatur               
+##   [607.txt, 519]             cum duobus laneis liberis, |   taberna   | , parte molendini ibidem et                 
+##   [625.txt, 347]         ac in dilecta gaudiorum suorum | tabernacula | introducat.&quot; - Dat                          
+##    [627.txt, 31]            dicto Rost in villa Nedwyes |  tabernam   | erigere concedit. - Not                     
+##    [627.txt, 97]                in qua usque nunc nulla |   taberna   | publica haberi consuevit, pro               
+##   [627.txt, 108]                      se et per eum una |   taberna   | instauretur publica et eciam habeatur       
+##   [627.txt, 167]    amplificari et emendari contigerit, |  tabernam   | seu tabernas plures, si                     
+##   [627.txt, 169]      emendari contigerit, tabernam seu |  tabernas   | plures, si necesse fuerit                   
+##   [627.txt, 193]          suis prefatis, quod huiusmodi |  tabernam   | seu tabernas per eum,                       
+##   [627.txt, 195]          , quod huiusmodi tabernam seu |  tabernas   | per eum, sicut premittitur                  
+##   [627.txt, 278]                  seu illum, cui easdem |  tabernam   | seu tabernas vendiderint, obligaverint      
+##   [627.txt, 280]              , cui easdem tabernam seu |  tabernas   | vendiderint, obligaverint seu locaverint    
+##    [808.txt, 63] hereditatis mensuram consuetam et vnam |  tabernam   | ibidem et necessarium vsum de               
+##   [829.txt, 278]                  medio nobis dando. De |   taberna   | vero predicte ciuitatis nostre unus         
+##   [829.txt, 458]               in ipsa ciuitate et vnam |  tabernam   | , duo macella, sci-                         
+##   [831.txt, 504]            denarium percipiat, cum una |   taberna   | et duos laneos eiusdem mensure              
+##   [860.txt, 427]             laneos et quartale cum una |   taberna   | in eorum metis seu terminis                 
+##   [861.txt, 102]         autem. prenominatos laneos cum |   taberna   | et quartali, sieut.                         
+##    [98.txt, 292]        in qualibet earum villarum vnam |  tabernam   | et iudicium cum omnibus et                  
+##    [98.txt, 374]               liberos, in ipsis villis |  tabernas   | atque iudicia cum suis iuribus</code></pre>
+<pre class="r"><code>kwic(rbm4, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 9 matches.                                                                                                      
+##  [1010.txt, 230]                         ( 1837 ) 172. |  humulus  | , agrum de eo Pragae             
+##   [107.txt, 529] praenomitatus Wernherus ad unum ortum |  humuli   | facere debet, quanto utilius     
+##    [178.txt, 86]                   , et unum ortum seu | humuletum | , situm citra ipsum molendinum   
+##   [323.txt, 415]                pascuis, vineis ortis, | humuletis | , pomeriis et plantis ac         
+##   [338.txt, 494]                 laneo, et unum hortum |  humuli   | ac hortum olerum- infra ecclesiam
+##   [710.txt, 122]                     ribus, de sale et |  humulo   | , de melle, de                   
+##   [711.txt, 292]            debebit. Item quicunque de |  humulo   | simul et semel pro vna           
+##   [757.txt, 409]              totidem ordei, IV modios |  humuli   | et IV solidos denariorum vriberg 
+##   [862.txt, 470]  presenciam Bohunko de Pyestech nobis | humuliter | supplicauit, quod cum ipse</code></pre>
+<pre class="r"><code>kwic(rbm4, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 2 matches.                                                                    
+##  [1009.txt, 715] ( 1841 ) 4 ] | sladius  | , gladii exercitium cam i
+##   [758.txt, 502]    1 gr. a z | sladovny | jako ze évrti, a</code></pre>
+<pre class="r"><code>kwic(rbm4, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vi1" class="section level2">
+<h2>RBM VI/1</h2>
+<pre class="r"><code>rbm6a &lt;- load_files(&quot;texts/698&quot;)
+kwic(rbm6a, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 9 matches.                                                                                                       
+##  [117.txt, 513]            rui permittant, quae super |   tabernis   | ipsi eL praepositurae mper reges
+##  [185.txt, 492]      obligatus. Inhibemus eciam omnes |   tabernas   | et universa ac singula opere    
+##  [189.txt, 369]             Brziezan cum suis laneis, |   thaberna   | et iudicio; item villa          
+##  [189.txt, 382]               suis laneis, iudicio et |   thaberna   | ; item homines in villa         
+##   [190.txt, 40]                    , bladis, iudicio, |   thaberna   | ; item villa Lybusscho- uiez    
+##   [190.txt, 59]                suis agris, iudicio et |   thaberna   | , bladis ac molendino;          
+##   [190.txt, 74]                suis agris, iudicio et |   thaberna   | ; item in villa Vstatywniczie   
+##     [3.txt, 42]        pacis puleritudine, in fiducie | tabernaculis | et opulenta requie fidelis po-  
+##   [73.txt, 407] nullum omnino censum solventes unacum |   taberna    | noviter ante dictum. monasterium</code></pre>
+<pre class="r"><code>kwic(rbm6a, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(rbm6a, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(rbm6a, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vi2" class="section level2">
+<h2>RBM VI/2</h2>
+<pre class="r"><code>rbm6b &lt;- load_files(&quot;texts/699&quot;)
+kwic(rbm6b, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 9 matches.                                                                                                       
+##  [119.txt, 621]               marcam pro censu, et |  thabernam   | ibidem in Brodlino annue censuantem
+##   [120.txt, 23]      prenarratis laneo, praytis eb |   thaberna   | nobis tenebimur vendicare, nisi    
+##   [120.txt, 69]      sepedictos laneum, praytas et |  thabernam   | ipsis donata, ut premittitur       
+##  [136.txt, 183]                       &#39;* ) una cum |   taberna    | . et fabro, quae                   
+##  [221.txt, 268] licenciam et omnimodam facultatem, |   tabernas   | et pistrina absque seu fundandi    
+##   [25.txt, 349]                , dominio, iudicio, |   taberna    | sita prope fluvium Multeuiam et    
+##  [277.txt, 396]          , Otto carnifex, Johannes |  tabernator  | , Frana&#39; Terkleri Woyko            
+##   [49.txt, 510]            litteras. dedit, multas |   tabernas   | concer- mentes ( fil krem          
+##   [67.txt, 353]      pacis pulchritudine, fiducie. | tabernaculis | e&amp; opulenta requie fidelis</code></pre>
+<pre class="r"><code>kwic(rbm6b, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                     
+##  [181.txt, 377] , rubetis, pratis, | humuletis | , pascuis, pomeriis,</code></pre>
+<pre class="r"><code>kwic(rbm6b, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+<pre class="r"><code>kwic(rbm6b, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vii1" class="section level2">
+<h2>RBM VII/1</h2>
+<pre class="r"><code>rbm7a &lt;- load_files(&quot;texts/1061&quot;)
+kwic(rbm7a, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 11 matches.                                                                                                       
+##   [123.txt, 53]           in eadem villa excullis et | tabernam  | ipsi iudicio unitam ^ )             
+##   [13.txt, 177]       suram continentes, cum publica |  taberna  | , uno pistore, uno                  
+##   [14.txt, 528]                in villa Ka- roli una |  taberna  | et uno laneo censuali,              
+##  [174.txt, 357]            et in Bernow altera villa | tabernam  | cum omni iure ac dominio            
+##   [18.txt, 273] . pronunciamus censum pitancie super |  taberna  | in villa Karoli unam sex            
+##   [26.txt, 353]         . 12. Monasterium Rudnicense | tabernam  | in Smolnice iure emphiteotico vendit
+##   [26.txt, 407]      unanimi consensu prehabitis - - | thabernam | in villa nostra Smolniez cum        
+##   [26.txt, 490]             et con- ventui de dictis | thaberna  | et vendicione carnium et panis      
+##   [26.txt, 617]             mediante iure, et dictam | thabernam | cum suis adherenciis alteri,        
+##   [67.txt, 477]     monasterii et ipsum monasterium, | tabernam  | liberam in pede pontis superioris   
+##   [88.txt, 491]            ibidem nec non scultecia, |  taberna  | - patronatus ecclesie ibidem et</code></pre>
+<pre class="r"><code>kwic(rbm7a, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 2 matches.                                                                                      
+##  [31.txt, 556] , Nicolaus piscator, Valentinus | humulator | , Nicolaus Dyrnda nec non
+##  [32.txt, 556]   , Nicolaus Dirnda, Valentinus | humulator | et Hasco in Poczkalo,</code></pre>
+<pre class="r"><code>kwic(rbm7a, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                   
+##  [135.txt, 264] socii, UB d. | Sladt | Saaz p. 27 n</code></pre>
+<pre class="r"><code>kwic(rbm7a, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                  
+##  [149.txt, 347] . v. Ulricus de | Krcz | , pres- biter nostre dyoc</code></pre>
+</div>
+<div id="rbm-vii2" class="section level2">
+<h2>RBM VII/2</h2>
+<pre class="r"><code>rbm7b &lt;- load_files(&quot;texts/1060&quot;)
+kwic(rbm7b, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 25 matches.                                                                                                                     
+##  [105.txt, 432]                        , ortis, subsidibus, |    tabernis    | , iudicio, iudicibus,                 
+##  [120.txt, 250]                  aliquis, quicumque fuerit, |    tabernam    | non erigat neque cervisiam braxet     
+##  [135.txt, 211]                       rum sine censu et una |    thaberna    | in eadem villa Brzezowicz,            
+##  [135.txt, 252]              eos nullus ibidem debet habere |   thabernam    | nec eos impedire. Eciam               
+##  [135.txt, 372]                     de Soutice concedit, ut |    tabernas    | in villis suis lenere possit          
+##  [135.txt, 396]             villis suis Suticz et Opatouicz |    tabernas    | construere et eas tenere et           
+##  [135.txt, 414]                ceteri mili- tares sui pares |    tabernas    | ipsorum tenent, dum tamen             
+##  [135.txt, 420]                   ipsorum tenent, dum tamen |    taberne     | huiusmodi civitatibus et opidis,      
+##  [144.txt, 166]      duobus laneis ville eiusdem Friczkonis |  tabernatoris  | sexaginta quatuor gr.;                
+##  [148.txt, 472]             in villis Provodov et Lochenice |    tabernas    | erigere possil. - -                   
+##  [148.txt, 530]             in villis Prowodow et Lochinicz |    tabernas    | duas liberas instaurare et habere     
+##  [148.txt, 574]             prefatum Rubi- num in predictis |    tabernis    | non impediant neque per alios         
+##  [150.txt, 317]                Sonov, Lipoltice, Hostovlice |    tabernas    | instaurare et cervisiam braxare valeat
+##  [150.txt, 408]                     puta in qualibet earum, |   thabernam    | instaurare valeat et ibidem cervisias 
+##   [151.txt, 71]               renovatoribus vestium, duo ex | tabernatoribus | , duo ex renovatoribus calceorum      
+##  [171.txt, 425]                     , ut in villa Vseborice |    tabernam    | habere possit. - -                    
+##  [171.txt, 509]          liceat vobis in villa Scheborzicza |    tabernam    | construere, eam tenere et             
+##  [171.txt, 536]               militares, vestri consimiles, |    tabernas    | eorum tenent et possident ac          
+##  [187.txt, 172]                      , ut in villa Valtérov |    tabernam    | constituere possit. - -               
+##  [187.txt, 226]                  ut in villa sua Waltherzow |   thabernam    | possit constituere seu thabernas,     
+##  [187.txt, 230] Waltherzow thabernam possit constituere seu |   thabernas    | , in quibus cervisia braxetur         
+##  [199.txt, 281]              conthorali eius duos laneos et |    tabernam    | in Kalhov pro 28 sex                  
+##  [199.txt, 391]        scilicet tertio denario emendarum et |    taberna     | , pro* ) 28                           
+##  [208.txt, 227]      fundorum ecclesiae Omnium sanctorum et |    tabernae    | super Elblag sitae vertente statuit   
+##   [83.txt, 422]               cultellifabri ab uno et Frane |  tabernatoris  | , que fuit domine Heynczelisse</code></pre>
+<pre class="r"><code>kwic(rbm7b, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 4 matches.                                                                                          
+##  [138.txt, 253] , Meinlinus heringer, Valentinus | humulator | , Jacobus Krzemenecz, Pesco
+##   [15.txt, 188]      Krze- us Dirnda, Valentinus | humulator | , Nicolaus de Eylav,       
+##   [79.txt, 194] , Meinlinus heringer, Valentinus | humulator | , Jacobus Krzemenicz, Pesko
+##   [83.txt, 339] , Jacobus Krzemenecz, Valentinus | humulator | , Bohunko coqus, Nicolaus</code></pre>
+<pre class="r"><code>kwic(rbm7b, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 2 matches.                                                             
+##  [107.txt, 584] Regesen zur Geseh. der | Sladi | XA 437, Neu.
+##  [151.txt, 195]        Schle npe UB d. | Slad  | ! Saaz p. n</code></pre>
+<pre class="r"><code>kwic(rbm7b, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vii3" class="section level2">
+<h2>RBM VII/3</h2>
+<pre class="r"><code>rbm7c &lt;- load_files(&quot;texts/1062&quot;)
+kwic(rbm7c, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 16 matches.                                                                                                     
+##  [102.txt, 445]       iudicio libero et una libera |   taberna   | , ubicunque in dictis villis      
+##  [102.txt, 570]        laneos liberos, pre- dietam |  tabernam   | liberam et duas curias,           
+##  [106.txt, 192]          , Otto carnifex, Johannes | thabernator | , Frana Terkleri, Woyko           
+##  [107.txt, 316]          , Otto carnifex, Johannes |   taber-    | nator, Frana Terkleri,            
+##  [186.txt, 139]            , unum quartale et unam |  tabernam   | in villa Tucin Johanni praeposito 
+##    [6.txt, 114]              : sis habere » tenere |  tabernam   | in dicta civilale, sitam          
+##    [6.txt, 150]             omnia faccre, que alii |  taberna-   | lores in suis labernis solenL     
+##    [6.txt, 180]    superius dicitur, racione dicte |   taberne   | liberi penitus et soluti,         
+##   [64.txt, 335]    Komorovice cum duobus laneis el |   taberna   | cerlis condicionibus vendunt. N   
+##   [64.txt, 403]              eum duobus laneis et. |   taberna   | , quantum de eadem aris           
+##   [64.txt, 449] mulo modo inpedire Sebebimus ipsam |  tabernam   | eum tercio denario ab eo          
+##   [76.txt, 655]              tam de laneis quam de |  thaberna   | habere dinoscimur, it.            
+##    [77.txt, 13]                     Rez, in qua de |  thaberna   | , molendino, laneis et            
+##   [77.txt, 234]               sex. census annui de |  thaberna   | in villa Karlsprunn, it           
+##   [90.txt, 383]       vulgariter dictis et cum una |   taberna   | necnon villam Wyssowicz, quatuor  
+##   [90.txt, 405]                , una prayta et una |   taberna   | necnon universis et singulis earum</code></pre>
+<pre class="r"><code>kwic(rbm7c, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 4 matches.                                                                                             
+##  [189.txt, 60]        , Bohunko Loderii, Sdenko | humulator | , cives iurati Nove civitatis  
+##  [36.txt, 346]     rex consentil, ul Valentinus | humulalor | , civis Novae civilalis Pragen-
+##  [36.txt, 381]        eum dil. nobis Valentinus | humulator | , civis Nove civitatis Prage   
+##  [58.txt, 410] Veronensem et in quibusdam ortis |  humuli   | et in aliis ipsius curie</code></pre>
+<pre class="r"><code>kwic(rbm7c, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                        
+##  [160.txt, 117] un ominica- nerinnen in der | Sladl | Ratibor, Cod. dipl</code></pre>
+<pre class="r"><code>kwic(rbm7c, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vii4" class="section level2">
+<h2>RBM VII/4</h2>
+<pre class="r"><code>rbm7d &lt;- load_files(&quot;texts/1063&quot;)
+kwic(rbm7d, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 14 matches.                                                                                                                        
+##   [10.txt, 564] Novae civitatis Pragensis profitentur Mixonem | tabernalorem | , civem dictae civitatis,                
+##  [103.txt, 241]                        , Otto carnifex, Jesco |  tabernator  | , Frana Terkleri, Woyko                  
+##    [11.txt, 18]                        , Otto carnifex, Jesco |  tabernator  | , Frana Terckleri, Woyko                 
+##    [11.txt, 63]                                diser. v. Mixo |  tabernator  | , noster concivis, suo                   
+##   [11.txt, 144]                    Wanate ex una et Bernhardi | tabernatoris | parte ex altera dicte civitatis          
+##  [118.txt, 114]                dicitur purchrecht, cum libera |   taberna    | . Qui quidem Nicolaus heredesque         
+##  [128.txt, 575]                        , Otto carnifex, Jesko |  tabernator  | , Frana Terkleri, Woyko                  
+##  [132.txt, 668]                                 , 7 ) fabrum, |   tabernam   | , sutorem, pistorem,                     
+##   [15.txt, 362]      bonis supradictis mechanicos deducant el |   tabernas   | instaurent. Nos Jeclinus dictus          
+##   [15.txt, 531]                    et si aliqui mechanici vel |   taberne    | in bonis ecclesie sepedicte vel          
+##   [67.txt, 332]                unam marcam census annui super |   taberna    | in Orlovice sita fratribus conventualibus
+##   [67.txt, 498]             singulis annis in carnisprivio de |   taberna    | , sita in villa nostra                   
+##    [68.txt, 22]                          quod absit, quo ipsa |   taberna    | per gwerram generalem aut ignis          
+##    [9.txt, 352]                        , OtLo carnifex, Jesco |  tabernator  | , Frana Terkleri, Woyko</code></pre>
+<pre class="r"><code>kwic(rbm7d, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 3 matches.                                                                                                  
+##  [132.txt, 679] carnificem et duos subsides ortumque |   humuli    | , piscinam antiquam et de    
+##   [24.txt, 397]            , Bohunko Loderii, Sdenko | humulatoris | , Leo de Zacz,               
+##   [50.txt, 381]                   Leo de Zatz, Sden- | humulatoris | , cives iurati Nove civitatis</code></pre>
+<pre class="r"><code>kwic(rbm7d, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                       
+##  [113.txt, 590] Pieha, UB d. | Sladi | Hrumimtu Lp. 91.</code></pre>
+<pre class="r"><code>kwic(rbm7d, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
+<div id="rbm-vii5" class="section level2">
+<h2>RBM VII/5</h2>
+<pre class="r"><code>rbm7e &lt;- load_files(&quot;texts/1064&quot;)
+kwic(rbm7e, c(&quot;taber*&quot;, &quot;thaber*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 9 matches.                                                                                                            
+##  [11.txt, 403]               quartali, quinque subsidibus, |  taberna  | , molendino et cum iure            
+##  [19.txt, 115]                     iudici in villa Smréná, | tabernam  | ibidem, ab omnibus oneribus        
+##  [19.txt, 164] consensu ac matura deliberatione praehabita | tabernam  | nostram, in villa nostra           
+##  [19.txt, 250]               ipsius heredes in dicta villa | tabernam  | habendi aut cerevisiam vel quidpiam
+##  [40.txt, 655]          incedens facilius possit ad eterna | taberna-  | cula pervenire. Nuper siquidem     
+##  [45.txt, 131]                   , rubetis, comunitatibus, | thabernis | , iudicio, emendis,                
+##  [47.txt, 146]               molendino in villa Wesselicz, | thaberna  | in Longa villa, tercio             
+##  [61.txt, 159]            videlicet duos laneos liberos et | tabernam  | liberam ibidem sibi ac suis        
+##  [61.txt, 409]                ipsum iudicium cum laneis et |  taberna  | predictis eo iure, [</code></pre>
+<pre class="r"><code>kwic(rbm7e, c(&quot;humul*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 1 match.                                                                               
+##  [59.txt, 500] nostre de predicto allodio, | humulariov | ) et pratis per ipsum</code></pre>
+<pre class="r"><code>kwic(rbm7e, c(&quot;slad*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 3 matches.                                                                        
+##  [102.txt, 346]        Hieke- Horéitka, UB der | Slad  | ! Aüssig p. 43 
+##   [108.txt, 82]                  zur Gesch. d. | Sladi | à. d. Landes   
+##   [36.txt, 219] el der Dominieanerinnen in der | Slad  | ! Ralibor, Cod.</code></pre>
+<pre class="r"><code>kwic(rbm7e, c(&quot;krcz*&quot;))</code></pre>
+<pre><code>## Keyword-in-context with 0 matches.</code></pre>
+</div>
 </div>
 
 
