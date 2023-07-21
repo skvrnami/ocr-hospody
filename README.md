@@ -4,6 +4,7 @@
 - [Die Landtafel des Markgrafthumes Mähren. Brünner Cuda](https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid=171)
 - [Die Landtafel des Markgrafthumes Mähren. Olmützer Cuda](https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid=301)
 - [Decem registra censuum](https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=41&bookid=154)
+etc.
 
 ## Plan
 - [x] stáhnout zemské desky  

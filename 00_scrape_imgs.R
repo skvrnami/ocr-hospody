@@ -1,4 +1,5 @@
 library(rvest)
+library(dplyr)
 
 # TODO: replace base_url with cat
 #' @param book_id Id of book inferred from the URL
