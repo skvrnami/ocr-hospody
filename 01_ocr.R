@@ -33,6 +33,9 @@ files_1064 <- find_files("output/1064/")
 files_1243 <- find_files("output/1243/")
 files_1244 <- find_files("output/1244/")
 
+files_543 <- find_files("output/543/")
+files_544 <- find_files("output/544/")
+
 ocr_files <- function(files, path, engine = lat){
     if(!dir.exists(path)){
         dir.create(path)
@@ -69,3 +72,5 @@ ocr_files(files_1064, "texts/1064")
 ocr_files(files_1243, "texts/1243")
 ocr_files(files_1244, "texts/1244")
 
+ocr_files(files_543, "texts/543")
+ocr_files(files_544, "texts/544")
