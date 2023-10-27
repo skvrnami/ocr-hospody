@@ -189,3 +189,22 @@ kwic(rbm7e, c("humul*"))
 kwic(rbm7e, c("slad*"))
 kwic(rbm7e, c("krcz*"))
 ```
+
+## Belehnungs- und Lehensgerichtsbücher des Bisthums Olmütz I (Lechner)
+```{r}
+lechner1 <- load_files("texts/543")
+kwic(lechner1, c("taber*", "thaber*"))
+kwic(lechner1, c("humul*"))
+kwic(lechner1, c("slad*"))
+kwic(lechner1, c("krcz*"))
+```
+
+## Belehnungs- und Lehensgerichtsbücher des Bisthums Olmütz II (Lechner)
+```{r}
+lechner2 <- load_files("texts/544")
+kwic(lechner1, c("taber*", "thaber*"))
+kwic(lechner1, c("humul*"))
+kwic(lechner1, c("slad*"))
+kwic(lechner1, c("krcz*"))
+```
+

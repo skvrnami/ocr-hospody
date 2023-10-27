@@ -74,3 +74,16 @@ ocr_files(files_1244, "texts/1244")
 
 ocr_files(files_543, "texts/543")
 ocr_files(files_544, "texts/544")
+
+merge_files <- function(path){
+    files <- list.files(path, full.names = TRUE)
+    files_df <- data.frame(
+        file = files, 
+        order = as.numeric(stringr::str_extract(files, "([0-9]+)\\.txt", group = 1))
+    ) %>% 
+        arrange(order)
+    unlist(purrr::map(files_df$file, readLines))
+}
+
+merge_files("texts/543") %>% writeLines("output/543.txt")
+merge_files("texts/544") %>% writeLines("output/544.txt")
