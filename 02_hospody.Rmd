@@ -202,9 +202,26 @@ kwic(lechner1, c("krcz*"))
 ## Belehnungs- und Lehensgerichtsbücher des Bisthums Olmütz II (Lechner)
 ```{r}
 lechner2 <- load_files("texts/544")
-kwic(lechner1, c("taber*", "thaber*"))
-kwic(lechner1, c("humul*"))
-kwic(lechner1, c("slad*"))
-kwic(lechner1, c("krcz*"))
+kwic(lechner2, c("taber*", "thaber*"))
+kwic(lechner2, c("humul*"))
+kwic(lechner2, c("slad*"))
+kwic(lechner2, c("krcz*"))
 ```
 
+## Pozůstatky desk zemských Království českého r. 1541 pohořelých, díl I. (Emler)
+```{r}
+emler1 <- load_files("texts/86")
+kwic(emler1, c("taber*", "thaber*"))
+kwic(emler1, c("humul*"))
+kwic(emler1, c("slad*"))
+kwic(emler1, c("krcz*"))
+```
+
+## Pozůstatky desk zemských Království českého r. 1541 pohořelých, díl II. (Emler)
+```{r}
+emler2 <- load_files("texts/192")
+kwic(emler2, c("taber*", "thaber*"))
+kwic(emler2, c("humul*"))
+kwic(emler2, c("slad*"))
+kwic(emler2, c("krcz*"))
+```

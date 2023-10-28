@@ -90,6 +90,13 @@ download_book_imgs(book_id = 154, end_page = 449,
 download_book_imgs(book_id = 543, end_page = 192, 
                    base_url = "https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=21&bookid")
 # Belehnungs- und Lehensgerichtsbücher des Bisthums Olmütz II (Lechner)
-download_book_imgs(book_id = 544, end_page = 348, start_page = 15,
+download_book_imgs(book_id = 544, end_page = 348,
                    base_url = "https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=21&bookid")
 
+# Pozůstatky desk zemských Království českého r. 1541 pohořelých, díl I. (Emler)
+download_book_imgs(book_id = 86, end_page = 630,
+                   base_url = "https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid")
+
+# Pozůstatky desk zemských Království českého r. 1541 pohořelých, díl II. (Emler)
+download_book_imgs(book_id = 192, end_page = 532,
+                   base_url = "https://sources.cms.flu.cas.cz/src/index.php?s=v&cat=7&bookid")
